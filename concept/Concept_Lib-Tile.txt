@@ -1,0 +1,119 @@
+--------------------------------------------------------------------------------
+CONCEPT from the library Lib-Tile 
+--------------------------------------------------------------------------------
+INTENTION
+The main idea from this little library is to get the developer and end-user the 
+possibility to load 'tiles' into an application. A 'Tile' is a transparent 
+texture which will be overlay through repetitions about a background image or 
+background color.
+
+--------------------------------------------------------------------------------
+FEATURES
+ - The developer can choose predefined extentions from the library which contains 
+   tile-set from xy autor or homepage.
+ - The developer can customize a predefined tile-set so that the end-user have only 
+   the tiles available in the customized tile-sets.
+ - Its also possible to use own tiles with this library which aren't defined in 
+   an extention library.
+   
+--------------------------------------------------------------------------------
+LIBRARY STRUCTURE
+Core
+ - Lib-Tile-Core
+    - Contains the core functionalities to load a tile image as a background pattern.
+	- Class Tile: Interface
+	   - getAutor()      : String
+	   - getHeader()     : String (must)
+	   - getHeight()     : double (must)
+	   - getName()       : String (must)
+	   - getUrl()        : String
+	   - getWidth()      : double (must)
+	- Class TileLoader: Singleton
+	   - loadAsBackground(Class loader, Tile tile): Background
+	   - loadAsSingleImage(Class loader, Tile tile): Image
+	- TileLoader extends AbstractTileLoader: Interface
+	- AbstractTileLoader
+	   - isSupported(String)   : boolean
+	
+Demo
+ - Lib-Tile-Demo
+    - Demo sample application.
+	- Shows all tile-images from all extentions. Which is currently 
+	  Lib-Tile-SubtlePatterns and Lib-Tile-TransparentTextures.
+	- The developer have the possibility to choose a background color or -image 
+	  and then the tile which will overlay the choosen background.
+	- Its also possibile for the developer to download a choosen tile as image 
+	  for a customized tile-set.
+	- Additional is the option to get a csv-list from all downloaded tiles which 
+	  can then be used in a custom tile-set.
+       - Extention from this functionality is that the developer can define a 
+	     customize tile-set through d&d from the tiles into a ListView. At the 
+		 end then the developer can create the customized tile-set with a button.
+		  - Creates a folder which contains the choosen tile-images and a 
+		    .properties file where the customized tile-set is defined.
+		
+Extention		
+ - Lib-Tile-TransparentTextures
+    - https://www.transparenttextures.com/
+    - Contains a definition from all 'TransparentTextures' tiles.
+	- Allowed to load a predefined tile as a background pattern.
+	- Allowed to load a predefined tile from a customized tile-set in context 
+	  from this extention.
+	- Class TransparentTextures implements Tile: Interface
+	   - Define all constants from TransparentTextures
+	- Class TransparentTexturesLoader
+	   - loadAsBackground(TransparentTextures tt) {
+	        return TileLoader.getDefault().loadAsBackground(TransparentTextures.class, TransparentTextures.XY);
+	     }
+ - Lib-Tile-TransparentTextures-Images
+    - Contains all tile-images from the 'TransparentTextures'. Currently the size 
+	  is over XyMB.
+ - Lib-Tile-SubtlePatterns
+     - http://subtlepatterns.com/
+    - Contains a definition from all 'SubtlePatterns' tiles.
+	- Allowed to load a predefined tile as a background pattern.
+	- Allowed to load a predefined tile from a customized tile-set in context 
+	  from this extention.
+	- Class SubtlePatterns implements Tile: Interface
+	   - Define all constants from SubtlePatterns
+	- Class SubtlePatterns
+	   - loadAsBackground(SubtlePatterns tt) {
+	        return TileLoader.getDefault().loadAsBackground(SubtlePatterns.class, SubtlePatterns.XY);
+	     }
+ - Lib-Tile-SubtlePatterns-Images
+    - Contains all tile-images from the 'SubtlePatterns'. Currently the size 
+	  is over XyMB.
+ 
+--------------------------------------------------------------------------------
+HELP for the implementation
+ - ikonli
+    - https://github.com/aalmiray/ikonli
+       - ikonli-core
+	   - ikonli-javafx
+	   - sampler-javafx
+	   - ikonli-runestroicons-pack
+	- Supports momentan 21 extentions (ikonli-xy-pack).
+ 
+--------------------------------------------------------------------------------
+ARTICLE
+CleanCode, Factory, ...
+
+--------------------------------------------------------------------------------
+MORE TILE-SETS
+ - http://coolpatterns.net/
+    - 60 free patterns
+
+--------------------------------------------------------------------------------
+ADDITIONAL FEATURE
+ - SEARCH Autor
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

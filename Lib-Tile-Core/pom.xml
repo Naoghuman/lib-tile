@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.naoghuman</groupId>
+        <artifactId>lib.tile</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>lib.tile.core</artifactId>
+    <name>Lib-Tile-Core</name>
+    <packaging>jar</packaging>
+    
+    <description>The library Lib-Tile-Core provides the main functionalities to load a Tile as a Background or an Image with a concrete implementation from an AbstractTileLoader.</description>
+    
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+
+</project>
+

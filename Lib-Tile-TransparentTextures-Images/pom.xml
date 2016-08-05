@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.naoghuman</groupId>
+        <artifactId>lib.tile</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>lib.tile.transparenttextures.images</artifactId>
+    <name>Lib-Tile-TransparentTextures-Images</name>
+    <packaging>jar</packaging>
+    
+    <description>The library Lib-Tile-TransparentTextures-Images contains all images from the tileset Transparent Textures and the loader TransparentTexturesTileLoader which allowed the developer to load a Tile image from the enum TransparentTexturesTile.</description>
+    
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lib.tile.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+    
+</project>
