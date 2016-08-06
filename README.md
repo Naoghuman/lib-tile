@@ -201,7 +201,7 @@ For more informations and examples plz see the [ReadMe from Lib-Tile-Core].
 
 With the library `Lib-Tile-TransparentTextures` the developer have access to the 
 tileset `Transparent Textures` from the internet page https://www.transparenttextures.com/ 
-through the enum `TransparentTexturesTile`.
+through the enum `TransparentTexturesTile`. Momentary that are `396` [Tiles]s.
 
 The tile images from this tileset are outsourced in a own library 
 `Lib-Tile-TransparentTextures-Images` to reduce the size from this library. One 
