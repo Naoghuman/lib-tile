@@ -149,7 +149,9 @@ public enum TransparentTexturesTile implements Tile {
  TT_ASFALT_DARK("tt-asfalt-dark.png", "Asfalt (Dark)", 466, 349, "Atle Mo", "http://atle.co/") // NOI18N
 ```
     
-<br />```Java/**
+<br />
+```Java
+/**
  * The <code>Java</code> representation from the tile: Asfalt (Light)
  */
  TT_ASFALT_LIGHT("tt-asfalt-light.png", "Asfalt (Light)", 466, 349, "Atle Mo", "http://atle.co/") // NOI18N
@@ -476,7 +478,7 @@ public enum TransparentTexturesTile implements Tile {
 ```
     
 <br />
-``Java
+```Java
 /**
  * The <code>Java</code> representation from the tile: Checkered Pattern
  */
@@ -932,7 +934,7 @@ public enum TransparentTexturesTile implements Tile {
 ```
     
 <br />
-``Java
+```Java
 /**
  * The <code>Java</code> representation from the tile: Ecailles
  */
@@ -2464,7 +2466,8 @@ public enum TransparentTexturesTile implements Tile {
 /**
  * The <code>Java</code> representation from the tile: Soft Pad
  */
- TT_SOFT_PAD("tt-soft-pad.png", "Soft Pad", 8, 8, "Badhon Ebrahim", "http://dribbble.com/graphcoder") // NOI18N```
+ TT_SOFT_PAD("tt-soft-pad.png", "Soft Pad", 8, 8, "Badhon Ebrahim", "http://dribbble.com/graphcoder") // NOI18N
+```
     
 <br />
 ```Java
