@@ -397,7 +397,7 @@ you can
 * read the `README.md` from every project and
 * read the [JavaDoc] in the project and libraries.
 
-where examples and the api are shown and explained.
+where `examples` and the `api` are shown and explained.
 
 
 
