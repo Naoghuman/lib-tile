@@ -31,6 +31,9 @@ Content
 * [Examples](#Examples)
 * [Api](#Api)
     * [TransparentTexturesTile](#TrTeTi)
+* [License](#License)
+* [Autor](#Autor)
+* [Contact](#Contact)
 
 
 

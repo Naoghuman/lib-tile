@@ -19,6 +19,9 @@ Content
 
 * [Examples](#Examples)
 * [Api](#Api)
+* [License](#License)
+* [Autor](#Autor)
+* [Contact](#Contact)
 
 
 
@@ -31,6 +34,7 @@ Examples<a name="Examples" />
 <br />
 Api<a name="Api" />
 ---
+
 
 
 <br />

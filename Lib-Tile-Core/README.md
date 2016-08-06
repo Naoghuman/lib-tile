@@ -26,6 +26,9 @@ Content
     * [com.github.naoghuman.lib.tile.core.AbstractTileLoader](#AbTiLo)
     * [com.github.naoghuman.lib.tile.core.DefaultTileLoader](#DeTiLo)
     * [com.github.naoghuman.lib.tile.core.Tile](#Ti)
+* [License](#License)
+* [Autor](#Autor)
+* [Contact](#Contact)
 
 
 
