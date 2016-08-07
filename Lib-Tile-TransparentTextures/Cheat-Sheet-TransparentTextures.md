@@ -8,7 +8,7 @@ Intention
 ---
 
 In this file all `values from the enum `TransparentTexturesTile` are listet. 
-Momentary that are `396` [Tiles]s in it defined.
+Momentary that are `396` [Tile]s in it defined.
 
 
 
