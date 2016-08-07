@@ -75,7 +75,7 @@ public enum TransparentTexturesTile implements Tile {
 
 In the [Cheat-Sheet from TransparentTextures] all [Tile]s from the webpage 
 https://www.transparenttextures.com/ are listed with the `name` from the value 
-in the enum `TransparentTexturesTile`. Momentary that are `396` [Tiles]s defined.
+in the enum `TransparentTexturesTile`. Momentary that are `396` [Tile]s defined.
 
 
 
