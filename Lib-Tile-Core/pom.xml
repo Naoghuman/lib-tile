@@ -18,6 +18,6 @@
         <defaultGoal>clean package</defaultGoal>
         <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
-
+    
 </project>
 
