@@ -7,7 +7,7 @@ Cheat-Sheet TransparentTextures
 Intention
 ---
 
-In this file all `values from the enum `TransparentTexturesTile` are listet. 
+In this file all `values` from the enum `TransparentTexturesTile` are listet. 
 Momentary that are `396` [Tile]s in it defined.
 
 
