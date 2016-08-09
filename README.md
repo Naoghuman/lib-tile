@@ -18,11 +18,12 @@ The current `version` is `0.1.0` from MM.dd.2016.
 
 <br />
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
-![different-tile-images.png][different-tile-images]
 
 > __Hint__  
 > Normally only one [Tile] can shown simultaneously. For demonstration purpose 
 > I have merge different [Tile]s in one picture.
+
+![different-tile-images.png][different-tile-images]
 
 > __Hint__  
 > This image is from the webpage https://wall.alphacoders.com. The image haven't 
