@@ -21,6 +21,10 @@ _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 ![different-tile-images.png][different-tile-images]
 
 > __Hint__  
+> Normally only one [Tile] can shown simultaneously. For demonstration purpose 
+> I have merge different [Tile]s in one picture.
+
+> __Hint__  
 > This image is from the webpage https://wall.alphacoders.com. The image haven't 
 > neither a `created by` or `shared by` flag &#040;see http://alphacoders.com/site/faq &#041;. 
 > If anyone is the autor and won't that I use this image here in my open souce 
