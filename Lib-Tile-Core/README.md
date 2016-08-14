@@ -172,9 +172,7 @@ public final class DefaultTileLoader {
  * 
  * @return a singleton instance from the class <code>DefaultTileLoader</code>.
  */
-public static final DefaultTileLoader getDefault() {
-    return instance.get();
-}
+public static final DefaultTileLoader getDefault()
 ```
 
 <br />
@@ -208,17 +206,7 @@ public static final DefaultTileLoader getDefault() {
  * @see javafx.scene.image.Image
  * @see #checkParameters(java.lang.String, java.lang.String, double, double)
  */
-public Background loadAsBackground(final AbstractTileLoader loader, final Tile tile) {
-    final Image overlay = DefaultTileLoader.getDefault().loadAsImage(loader, tile);
-
-    final BackgroundSize backgroundSize = new BackgroundSize(tile.getWidth(), tile.getHeight(), 
-            false, false, false, false);
-    final BackgroundImage backgroundImage = new BackgroundImage(overlay, BackgroundRepeat.REPEAT,
-            BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, backgroundSize);
-    final Background background = new Background(backgroundImage);
-
-    return background;
-}
+public Background loadAsBackground(final AbstractTileLoader loader, final Tile tile)
 ```
 
 <br />
@@ -248,35 +236,7 @@ public Background loadAsBackground(final AbstractTileLoader loader, final Tile t
  * @see javafx.scene.image.Image
  * @see #checkParameters(java.lang.String, java.lang.String, double, double)
  */
-public Image loadAsImage(final AbstractTileLoader loader, final Tile tile) {
-    if (!loader.isSupported(tile)) {
-        throw new UnsupportedOperationException(
-                "The tile-loader " + loader.getClass().getSimpleName() // NOI18N
-                + " doesn't support the Tile: " + tile.toString()); // NOI18N
-    }
-        
-    try {
-        final String imageName = tile.getImageName();
-        final String title = tile.getTitle();
-        final double width = tile.getWidth();
-        final double height = tile.getHeight();
-        DefaultTileLoader.getDefault().checkParameters(imageName, title, width, height);
-    } catch (NullPointerException | IllegalArgumentException ex) {
-        Logger.getLogger(DefaultTileLoader.class.getName()).log(Level.SEVERE, 
-                "Given Tile isn't valid: " + tile.toString(), ex);
-    }
-
-    Image img = null;
-    try {
-        final URI uri = loader.getClass().getResource(tile.getImageName()).toURI();
-        img = new Image(uri.toString(), tile.getWidth(), tile.getHeight(), true, true);
-    } catch (Exception ex) {
-        Logger.getLogger(DefaultTileLoader.class.getName()).log(Level.SEVERE, 
-                "Can't load Tile: " + tile.toString(), ex);
-    }
-
-    return img;
-}
+public Image loadAsImage(final AbstractTileLoader loader, final Tile tile)
 ```
 
 
