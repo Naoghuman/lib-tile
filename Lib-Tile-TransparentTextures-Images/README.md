@@ -7,6 +7,11 @@ Lib-Tile-TransparentTextures-Images
 Intention
 ---
 
+The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
+tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader] 
+which allowed the developer to load a [Tile] image from the enum 
+[TransparentTexturesTile].
+
 > __Hint__  
 > This libray is a part from the project [Lib-Tile]. Plz see for additional 
 > informations like [Download], [Requirements] or [Installation] there. Thanks :smile:
@@ -137,4 +142,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Installation]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Installation
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
-
+[Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
+[TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
+[TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
