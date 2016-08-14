@@ -373,6 +373,7 @@ in dependency from your necessities:
     * Use the demo application as a preview how the chosen [Tile]s will be looks 
       over your chosen background image/-color.
 
+Access to the downloads are here: [Download Lib-Tile]
 
 
 <br />
@@ -448,6 +449,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [//]: # (Links)
 [AbstractTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/AbstractTileLoader.java
 [Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
+[Download Lib-Tile]:https://github.com/Naoghuman/lib-tile/releases
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [Issue]:https://github.com/Naoghuman/lib-tile/issues
