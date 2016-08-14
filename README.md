@@ -14,7 +14,7 @@ application.
 A [Tile] is per definition a little transparent [Image] which overlay a 
 background-color or -image with the help of repetitions from the image in a layer.
 
-The current `version` is `0.1.0` from MM.dd.2016.
+The current `version` is `0.1.0` from 08.14.2016.
 
 <br />
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
@@ -366,12 +366,12 @@ in dependency from your necessities:
     * Contains the libraries lib-tile-core-0.1.0.jar, lib-tile-transparenttextures-0.1.0.jar, 
       lib-tile-transparenttextures-images-0.1.0.jar.
     * You can use the predefined tileset `Transparent Textures` in your application.
-* Download Lib-Tile-Demo-0.1.0.zip
-    * Contains the library lib-tile-demo-0.1.0.jar as an executable jar  
+* Download Lib-Tile-Demo-0.1.0-SNAPSHOT.zip
+    * Contains the library lib-tile-demo-0.1.0-SNAPSHOT.jar as an executable jar  
       with included libraries lib-tile-core-0.1.0.jar, lib-tile-transparenttextures-0.1.0.jar, 
       lib-tile-transparenttextures-images-0.1.0.jar.
     * Use the demo application as a preview how the chosen [Tile]s will be looks 
-      over your chosen background image/color.
+      over your chosen background image/-color.
 
 
 
