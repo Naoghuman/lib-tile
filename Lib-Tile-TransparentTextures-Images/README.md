@@ -30,6 +30,8 @@ Content
 Examples<a name="Examples" />
 ---
 
+TODO Add in later version examples how to use this `api`.
+
 
 
 <br />
