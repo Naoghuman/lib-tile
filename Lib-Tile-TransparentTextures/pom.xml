@@ -11,6 +11,8 @@
     <artifactId>lib.tile.transparenttextures</artifactId>
     <name>Lib-Tile-TransparentTextures</name>
     <packaging>jar</packaging>
+    <inceptionYear>2016</inceptionYear>
+    <url>https://github.com/Naoghuman/lib-tile.git</url>
     
     <description>With the library Lib-Tile-TransparentTextures the developer have access to the tileset Transparent Textures from the internet page https://www.transparenttextures.com/ through the enum TransparentTexturesTile.
 
@@ -20,6 +22,25 @@ The tile images from this tileset are outsourced in a own library Lib-Tile-Trans
         <defaultGoal>clean package</defaultGoal>
         <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
+    
+    <developers>
+        <developer>
+            <email>peter.rogge@yahoo.de</email>
+            <id>Naoghuman</id>
+            <name>Peter Rogge</name>
+            <timezone>+1</timezone>
+            <url>https://github.com/Naoghuman/lib-tile.git</url>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+            <comments>The GNU General Public License is a free, copyleft license for software and other kinds of works.</comments>
+        </license>
+    </licenses>
     
     <dependencies>
         <dependency>

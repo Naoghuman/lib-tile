@@ -21,7 +21,7 @@ A Tile is per definition a little transparent Image which overlay a background-c
             <id>Naoghuman</id>
             <name>Peter Rogge</name>
             <timezone>+1</timezone>
-            <url>https://github.com/Naoghuman/Lib-Tile.git</url>
+            <url>https://github.com/Naoghuman/lib-tile.git</url>
         </developer>
     </developers>
     
@@ -35,9 +35,9 @@ A Tile is per definition a little transparent Image which overlay a background-c
     </licenses>
 
     <scm>
-        <connection>scm:git:ssh://github.com:Naoghuman/Lib-Tile.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:Naoghuman/Lib-Tile.git</developerConnection>
-        <url>https://github.com/Naoghuman/Lib-Tile.git</url>
+        <connection>scm:git:ssh://github.com:Naoghuman/lib-tile.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:Naoghuman/lib-tile.git</developerConnection>
+        <url>https://github.com/Naoghuman/lib-tile.git</url>
     </scm>
     
     <properties>
