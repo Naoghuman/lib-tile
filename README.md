@@ -73,9 +73,9 @@ Momentary the developer have following features during the demo application:
     * For example: https://initiate.alphacoders.com/images/722/cropped-1280-720-72270.jpg?8276
     * In a later version I plan to implement the option to load also local images.
 * Define your own background color.
-    * Currently only single colors are supported. For a later version I planed 
-      the option to define a [LinearGradient] or a [RadialGradient] colors 
-      through `css` &#040;[JavaFX CSS Reference Guide]&#041;.
+    * Currently only single colors are supported.
+    * For a later version I planed the option to define a [LinearGradient] or a 
+      [RadialGradient] colors through `css` &#040;[JavaFX CSS Reference Guide]&#041;.
 * Browse through all [Tile]s from the tileset `Transparent Textures`.
 
 <br />
@@ -442,6 +442,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [//]: # (Images)
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/17412537/8fd2c446-5a7d-11e6-82b2-34aca4f5f870.png
+
 
 
 [//]: # (Links)
