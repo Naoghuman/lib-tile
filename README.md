@@ -367,7 +367,7 @@ in dependency from your necessities:
       lib-tile-transparenttextures-images-0.1.0.jar.
     * You can use the predefined tileset `Transparent Textures` in your application.
 * Download Lib-Tile-Demo-0.1.0-SNAPSHOT.zip
-    * Contains the library lib-tile-demo-0.1.0-SNAPSHOT.jar as an executable jar  
+    * Contains the library lib-tile-demo-0.1.0-SNAPSHOT.jar as an executable jar 
       with included libraries lib-tile-core-0.1.0.jar, lib-tile-transparenttextures-0.1.0.jar, 
       lib-tile-transparenttextures-images-0.1.0.jar.
     * Use the demo application as a preview how the chosen [Tile]s will be looks 
