@@ -70,7 +70,7 @@ Momentary the developer have following features during the demo application:
 * Choose your own background image.
     * Currently only images from the internet &#040;http or https&#041; with 
       the size 1280x720 are supported.
-    * For example: https://initiate.alphacoders.com/images/722/cropped-1280-720-72270.jpg?8276
+    * For example: https://wall.alphacoders.com/wallpaper.php?i=72270&w=1280&h=720&type=crop
     * In a later version I plan to implement the option to load also local images.
 * Define your own background color.
     * Currently only single colors are supported.
