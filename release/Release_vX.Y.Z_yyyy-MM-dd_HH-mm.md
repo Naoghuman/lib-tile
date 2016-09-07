@@ -1,4 +1,4 @@
-Welcome to `Lib-Tile` with the new release `0.2.0`.
+Welcome to `Lib-Tile` with the new release `vX.Y.Z`.
 
 Lib-Tile is a multi Maven project written in JavaFX and NetBeans IDE 8.0.2 and 
 provides the functionalities to use and handle easily Tiles in your JavaFX 
@@ -12,6 +12,7 @@ layer.
 
 #### Summary
 * ...
+* ...
 
 
 
@@ -19,12 +20,11 @@ layer.
 
 
 
-#### Enhancement
-#4 [Documentation] Add a template for the release-notes.
-
-
-
 #### Feature
+
+
+
+#### Enhancement
 
 
 
@@ -41,7 +41,7 @@ layer.
 
 
 Greetings
-Naoghuman (Peter Rogge)
+Naoghuman
 
 
 
@@ -50,3 +50,4 @@ Naoghuman (Peter Rogge)
 
 
 [//]: # (Links)
+
