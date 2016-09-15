@@ -2018,11 +2018,11 @@ public enum TransparentTexturesTile implements Tile {
     private final String title;
 
     TransparentTexturesTile(
-            final String name, final String header,
+            final String imageName, final String title,
             final double width, final double height,
             final String autor
     ) {
-        this(name, header, width, height, autor, ""); // NOI18N
+        this(imageName, title, width, height, autor, ""); // NOI18N
     }
 
     TransparentTexturesTile(
