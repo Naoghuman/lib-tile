@@ -33,6 +33,7 @@ layer.
 
 
 #### Refactoring
+#5 [Lib-Tile-TransparentTextures] Rename parameters in first constructor.
 #2 [pom] Remove not needed dependency to to commens-lang3.
 
 
