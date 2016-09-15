@@ -33,6 +33,7 @@ layer.
 
 
 #### Refactoring
+#2 [pom] Remove not needed dependency to to commens-lang3.
 
 
 
