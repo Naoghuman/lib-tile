@@ -25,6 +25,7 @@ layer.
 
 
 #### Feature
+#8 [Lib-Tile] Prepare libraries for Maven Central.
 
 
 
