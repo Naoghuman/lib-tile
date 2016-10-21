@@ -24,13 +24,13 @@ import com.github.naoghuman.lib.tile.core.DefaultTileLoader;
 import java.util.Optional;
 
 /**
- * The singleton <code>TransparentTexturesTileLoader</code> is a concrete 
- * implementation from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
+ * from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
- * which must be defined in the enum 
- * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile}
- * as a {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ * (which is per definition a little transparent Image) from the enum 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
+ * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
  *
  * @author Naoghuman
  * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader

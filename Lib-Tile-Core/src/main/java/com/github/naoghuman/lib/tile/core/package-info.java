@@ -16,10 +16,10 @@
  */
 
 /**
- * This package contains the main <code>Classes</code> and <code>Interfacees</code> 
- * which allowed the developer to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
- * as a {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} 
- * with a concrete implementation from an 
+ * This package contains the main <code>Classes</code> and <code>Interfaces</code> which 
+ * allowed the developer to load a {@link com.github.naoghuman.lib.tile.core.Tile} (which is 
+ * per definition a little transparent Image) as a {@link javafx.scene.layout.Background} or 
+ * an {@link javafx.scene.image.Image} with a concrete implementation from an 
  * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
  * 
  * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
