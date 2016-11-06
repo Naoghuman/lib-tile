@@ -19,13 +19,13 @@ package com.github.naoghuman.lib.tile.transparenttextures.images;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import com.github.naoghuman.lib.tile.core.Tile;
-import com.github.naoghuman.lib.tile.core.AbstractTileLoader;
-import com.github.naoghuman.lib.tile.core.DefaultTileLoader;
+import com.github.naoghuman.lib.tile.core.TileProvider;
 import java.util.Optional;
+import com.github.naoghuman.lib.tile.core.TileLoader;
 
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * from the interface {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
@@ -33,13 +33,13 @@ import java.util.Optional;
  * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements AbstractTileLoader {
+public final class TransparentTexturesTileLoader implements TileLoader {
 	
     private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
 
@@ -74,12 +74,12 @@ public final class TransparentTexturesTileLoader implements AbstractTileLoader {
 
     @Override
     public Background loadAsBackground(final Tile tile) {
-        return DefaultTileLoader.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
+        return TileProvider.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
     @Override
     public Image loadAsImage(final Tile tile) {
-        return DefaultTileLoader.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
+        return TileProvider.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
 }

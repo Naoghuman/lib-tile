@@ -114,8 +114,8 @@ Interface [AbstractTileLoader]
 ```java
 /**
  * This interface defines the minimal functionalities which should be supported
- * by an <code>AbstractTileLoader</code>. With a concrete implementation from
- * this <code>Interface</code> its then be possible to load a
+ * by an <code>TileLoader</code>. With a concrete implementation from this 
+ * <code>Interface</code> its then be possible to load a
  * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
  * little transparent Image) as a {@link javafx.scene.layout.Background} or an
  * {@link javafx.scene.image.Image}.
@@ -125,38 +125,38 @@ Interface [AbstractTileLoader]
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public interface AbstractTileLoader {
+public interface TileLoader {
 
     /**
      * The parameter <code>prefix</code> defines if the {@link com.github.naoghuman.lib.tile.core.Tile} 
      * is supported by this <code>AbstractTileLoader</code> or not.
      *
      * @return the prefix which defines if the{@link com.github.naoghuman.lib.tile.core.Tile} 
-     * is supported or not by this <code>AbstractTileLoader</code>.
+     * is supported or not by this <code>TileLoader</code>.
      * @see com.github.naoghuman.lib.tile.core.Tile
      */
     public String getPrefix();
 
     /**
      * Checks the given {@link com.github.naoghuman.lib.tile.core.Tile} if it's
-     * supported by this <code>AbstractTileLoader</code>.
+     * supported by this <code>TileLoader</code>.
      *
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be checked if it's supported by this <code>AbstractTileLoader</code> or not.
+     * should be checked if it's supported by this <code>TileLoader</code> or not.
      * @return <code>true</code> if the {@link com.github.naoghuman.lib.tile.core.Tile} 
-     * is supported by this <code>AbstractTileLoader</code>, otherwise <code>false</code>.
+     * is supported by this <code>TileLoader</code>, otherwise <code>false</code>.
      * @see com.github.naoghuman.lib.tile.core.Tile
      */
     public boolean isSupported(Tile tile);
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader} as an
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
      * {@link javafx.scene.image.Image} which will be converted to a
      * {@link javafx.scene.layout.Background}.
      * <p />
      * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(AbstractTileLoader, Tile)}.
+     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)}.
      * For additional information plz see the JavaDoc there.
      * <br />
      * See for an example the method
@@ -166,7 +166,7 @@ public interface AbstractTileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.layout.Background}.
      * @return the loaded {@link javafx.scene.layout.Background}.
-     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(AbstractTileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)
      * @see com.github.naoghuman.lib.tile.core.Tile
      * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)
      * @see javafx.scene.layout.Background
@@ -180,7 +180,7 @@ public interface AbstractTileLoader {
      * {@link javafx.scene.image.Image}.
      * <p />
      * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(AbstractTileLoader, Tile)}.
+     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
      * For additional information plz see the JavaDoc there.
      * <br />
      * See for example the method
@@ -190,7 +190,7 @@ public interface AbstractTileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.image.Image}.
      * @return the loaded {@link javafx.scene.image.Image}.
-     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(AbstractTileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)
      * @see com.github.naoghuman.lib.tile.core.Tile
      * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)
      * @see javafx.scene.image.Image
@@ -290,7 +290,7 @@ Class [TransparentTexturesTileLoader]
 ```java
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * from the interface {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
@@ -298,13 +298,13 @@ Class [TransparentTexturesTileLoader]
  * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements AbstractTileLoader {
+public final class TransparentTexturesTileLoader implements TileLoader {
 	
     private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
 
@@ -339,12 +339,12 @@ public final class TransparentTexturesTileLoader implements AbstractTileLoader {
 
     @Override
     public Background loadAsBackground(final Tile tile) {
-        return DefaultTileLoader.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
+        return TileProvider.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
     @Override
     public Image loadAsImage(final Tile tile) {
-        return DefaultTileLoader.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
+        return TileProvider.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
 }

@@ -28,33 +28,33 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 
 /**
- * The singleton <code>DefaultTileLoader</code> allowed the developer to load a
+ * The singleton <code>TileProvider</code> allowed the developer to load a
  * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
  * little transparent Image) as a {@link javafx.scene.layout.Background} or an
  * {@link javafx.scene.image.Image} with a concrete implementation from an
- * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class DefaultTileLoader {
+public final class TileProvider {
 
-    private static final Optional<DefaultTileLoader> instance = Optional.of(new DefaultTileLoader());
+    private static final Optional<TileProvider> instance = Optional.of(new TileProvider());
 
     /**
-     * Returns a singleton instance from the class <code>DefaultTileLoader</code>.
+     * Returns a singleton instance from the class <code>TileProvider</code>.
      *
      * @return a singleton instance from the class
-     * <code>DefaultTileLoader</code>.
+     * <code>TileProvider</code>.
      */
-    public static final DefaultTileLoader getDefault() {
+    public static final TileProvider getDefault() {
         return instance.get();
     }
 
-    private DefaultTileLoader() {
+    private TileProvider() {
 
     }
 
@@ -112,15 +112,15 @@ public final class DefaultTileLoader {
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader} as an
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
      * {@link javafx.scene.image.Image} which will be converted to a
      * {@link javafx.scene.layout.Background}.
      * <p />
      * Internal following checks will be performed:
      * <ul>
      * <li>Checks if the
-     * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader} supports
-     * the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} supports the 
+     * {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
      * {@link java.lang.UnsupportedOperationException} is thrown.</li>
      * <li>Checks if the parameters 'width' and 'height' from the
      * <code>Tile</code> is greater then 0.0d. If not the a
@@ -140,7 +140,7 @@ public final class DefaultTileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.layout.Background}.
      * @return the loaded {@link javafx.scene.layout.Background}.
-     * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+     * @see com.github.naoghuman.lib.tile.core.TileLoader
      * @see com.github.naoghuman.lib.tile.core.Tile
      * @see javafx.scene.layout.Background
      * @see javafx.scene.image.Image
@@ -148,8 +148,8 @@ public final class DefaultTileLoader {
      * @see #checkParameterImageName(java.lang.String)
      * @see #checkParameterTitle(java.lang.String)
      */
-    public Background loadAsBackground(final AbstractTileLoader loader, final Tile tile) {
-        final Image overlay = DefaultTileLoader.getDefault().loadAsImage(loader, tile);
+    public Background loadAsBackground(final TileLoader loader, final Tile tile) {
+        final Image overlay = TileProvider.getDefault().loadAsImage(loader, tile);
         final BackgroundSize backgroundSize = new BackgroundSize(tile.getWidth(), tile.getHeight(),
                 false, false, false, false);
         final BackgroundImage backgroundImage = new BackgroundImage(overlay, BackgroundRepeat.REPEAT,
@@ -161,13 +161,12 @@ public final class DefaultTileLoader {
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader} as an
-     * {@link javafx.scene.image.Image}.
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an {@link javafx.scene.image.Image}.
      * <p />
      * Internal following checks will be performed:
      * <ul>
      * <li>Checks if the
-     * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader} supports
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} supports
      * the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
      * {@link java.lang.UnsupportedOperationException} is thrown.</li>
      * <li>Checks if the parameters 'width' and 'height' from the
@@ -187,14 +186,14 @@ public final class DefaultTileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as an {@link javafx.scene.image.Image}.
      * @return the loaded {@link javafx.scene.image.Image}.
-     * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+     * @see com.github.naoghuman.lib.tile.core.TileLoader
      * @see com.github.naoghuman.lib.tile.core.Tile
      * @see javafx.scene.image.Image
      * @see #checkParameterDimension(double, double)
      * @see #checkParameterImageName(java.lang.String)
      * @see #checkParameterTitle(java.lang.String)
      */
-    public Image loadAsImage(final AbstractTileLoader loader, final Tile tile) {
+    public Image loadAsImage(final TileLoader loader, final Tile tile) {
         if (!loader.isSupported(tile)) {
             throw new UnsupportedOperationException(
                     "The tile-loader '" + loader.getClass().getName() // NOI18N
@@ -203,16 +202,16 @@ public final class DefaultTileLoader {
 
         try {
             final String imageName = tile.getImageName();
-            DefaultTileLoader.getDefault().checkParameterImageName(imageName);
+            TileProvider.getDefault().checkParameterImageName(imageName);
 
             final String title = tile.getTitle();
-            DefaultTileLoader.getDefault().checkParameterTitle(title);
+            TileProvider.getDefault().checkParameterTitle(title);
 
             final double width = tile.getWidth();
             final double height = tile.getHeight();
-            DefaultTileLoader.getDefault().checkParameterDimension(width, height);
+            TileProvider.getDefault().checkParameterDimension(width, height);
         } catch (NullPointerException | IllegalArgumentException ex) {
-            Logger.getLogger(DefaultTileLoader.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
                     "Given Tile isn't valid: " + tile.toString(), ex);
         }
 
@@ -221,7 +220,7 @@ public final class DefaultTileLoader {
             final URI uri = loader.getClass().getResource(tile.getImageName()).toURI();
             img = new Image(uri.toString(), tile.getWidth(), tile.getHeight(), true, true);
         } catch (Exception ex) {
-            Logger.getLogger(DefaultTileLoader.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
                     "Can't load Tile: " + tile.toString(), ex);
         }
 
