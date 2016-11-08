@@ -42,7 +42,7 @@ public interface Tile {
      * The autor url from the <code>Tile</code>.
      * <p />
      * This parameter is optional. If the parameter <code>autor</code> is NULL
-     * or empty then this parameter won't be evaluated.
+     * or EMPTY then this parameter won't be evaluated.
      *
      * @return the autor url from the <code>Tile</code>.
      * @see #getAutor()
@@ -61,7 +61,7 @@ public interface Tile {
     /**
      * The image name from the <code>Tile</code>.
      * <p />
-     * This parameter can't be NULL or empty.
+     * This parameter can't be NULL or EMPTY.
      *
      * @return the image name from the <code>Tile</code>.
      */
@@ -70,7 +70,7 @@ public interface Tile {
     /**
      * The title from the <code>Tile</code>.
      * <p />
-     * This parameter can't be NULL or empty.
+     * This parameter can't be NULL or EMPTY.
      *
      * @return the title from the <code>Tile</code>.
      */

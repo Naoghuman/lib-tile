@@ -16,6 +16,8 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
+import com.github.naoghuman.lib.tile.core.validator.DefaultTileValidator;
+import com.github.naoghuman.lib.tile.core.validator.TileValidator;
 import java.net.URI;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -47,8 +49,7 @@ public final class TileProvider {
     /**
      * Returns a singleton instance from the class <code>TileProvider</code>.
      *
-     * @return a singleton instance from the class
-     * <code>TileProvider</code>.
+     * @return a singleton instance from the class <code>TileProvider</code>.
      */
     public static final TileProvider getDefault() {
         return instance.get();
@@ -58,56 +59,8 @@ public final class TileProvider {
 
     }
 
-    /**
-     * This method checks the parameters 'width' and 'height'.
-     *
-     * @param width which must be (width > 0.0d).
-     * @param height which must be (height > 0.0d).
-     * @throws IllegalArgumentException if (width <= 0.0d || height <= 0.0d)
-     */
-    private void checkParameterDimension(final double width, final double height) throws IllegalArgumentException {
-        if (width <= 0.0d) {
-            throw new IllegalArgumentException("The parameter 'width' can't <= 0.0d"); // NOI18N
-        }
-
-        if (height <= 0.0d) {
-            throw new IllegalArgumentException("The parameter 'height' can't <= 0.0d"); // NOI18N
-        }
-    }
-
-    /**
-     * This method checks the parameter 'imageName'.
-     *
-     * @param imageName which must be (imageName != NULL &&
-     * !imageName.trim().isEmpty()).
-     * @throws NullPointerException if (imageName == null)
-     * @throws IllegalArgumentException if (imageName.trim().isEmpty())
-     */
-    private void checkParameterImageName(final String imageName) throws NullPointerException, IllegalArgumentException {
-        if (imageName == null) {
-            throw new NullPointerException("The parameter 'imageName' can't be NULL"); // NOI18N
-        }
-
-        if (imageName.trim().isEmpty()) {
-            throw new IllegalArgumentException("The parameter 'imageName' can't be EMPTY"); // NOI18N
-        }
-    }
-
-    /**
-     * This method checks the parameter 'title'.
-     *
-     * @param title which must be (title != NULL && !title.trim().isEmpty()).
-     * @throws NullPointerException if (title == null)
-     * @throws IllegalArgumentException if (title.trim().isEmpty())
-     */
-    private void checkParameterTitle(final String title) throws NullPointerException, IllegalArgumentException {
-        if (title == null) {
-            throw new NullPointerException("The parameter 'title' can't be NULL"); // NOI18N
-        }
-
-        if (title.trim().isEmpty()) {
-            throw new IllegalArgumentException("The parameter 'title' can't be EMPTY"); // NOI18N
-        }
+    public TileValidator getDefaultTileValidator() {
+        return DefaultTileValidator.getDefault();
     }
 
     /**
@@ -118,18 +71,17 @@ public final class TileProvider {
      * <p />
      * Internal following checks will be performed:
      * <ul>
-     * <li>Checks if the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} supports the 
-     * {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
+     * <li>Checks if the {@link com.github.naoghuman.lib.tile.core.TileLoader}
+     * supports the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
      * {@link java.lang.UnsupportedOperationException} is thrown.</li>
      * <li>Checks if the parameters 'width' and 'height' from the
      * <code>Tile</code> is greater then 0.0d. If not the a
      * IllegalArgumentException will be thrown.</li>
      * <li>Checks if the parameter 'imageName' from the <code>Tile</code> is not
-     * NULL and not empty. Throws otherwise a NullPointerException or a
+     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
      * IllegalArgumentException.</li>
      * <li>Checks if the parameter 'title' from the <code>Tile</code> is not
-     * NULL and not empty. Throws otherwise a NullPointerException or a
+     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
      * IllegalArgumentException.</li>
      * </ul>
      *
@@ -161,22 +113,22 @@ public final class TileProvider {
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an {@link javafx.scene.image.Image}.
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
+     * {@link javafx.scene.image.Image}.
      * <p />
      * Internal following checks will be performed:
      * <ul>
-     * <li>Checks if the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} supports
-     * the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
+     * <li>Checks if the {@link com.github.naoghuman.lib.tile.core.TileLoader}
+     * supports the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
      * {@link java.lang.UnsupportedOperationException} is thrown.</li>
      * <li>Checks if the parameters 'width' and 'height' from the
      * <code>Tile</code> is greater then 0.0d. If not the a
      * IllegalArgumentException will be thrown.</li>
      * <li>Checks if the parameter 'imageName' from the <code>Tile</code> is not
-     * NULL and not empty. Throws otherwise a NullPointerException or a
+     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
      * IllegalArgumentException.</li>
      * <li>Checks if the parameter 'title' from the <code>Tile</code> is not
-     * NULL and not empty. Throws otherwise a NullPointerException or a
+     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
      * IllegalArgumentException.</li>
      * </ul>
      *
@@ -200,16 +152,15 @@ public final class TileProvider {
                     + "' doesn't support the Tile: " + tile.toString()); // NOI18N
         }
 
+        final String imageName = tile.getImageName();
+        final String title = tile.getTitle();
+        final double height = tile.getHeight();
+        final double width = tile.getWidth();
         try {
-            final String imageName = tile.getImageName();
-            TileProvider.getDefault().checkParameterImageName(imageName);
-
-            final String title = tile.getTitle();
-            TileProvider.getDefault().checkParameterTitle(title);
-
-            final double width = tile.getWidth();
-            final double height = tile.getHeight();
-            TileProvider.getDefault().checkParameterDimension(width, height);
+            this.getDefaultTileValidator().validate(imageName);
+            this.getDefaultTileValidator().validate(title);
+            this.getDefaultTileValidator().validate(width);
+            this.getDefaultTileValidator().validate(height);
         } catch (NullPointerException | IllegalArgumentException ex) {
             Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
                     "Given Tile isn't valid: " + tile.toString(), ex);
@@ -217,8 +168,8 @@ public final class TileProvider {
 
         Image img = null;
         try {
-            final URI uri = loader.getClass().getResource(tile.getImageName()).toURI();
-            img = new Image(uri.toString(), tile.getWidth(), tile.getHeight(), true, true);
+            final URI uri = loader.getClass().getResource(imageName).toURI();
+            img = new Image(uri.toString(), width, height, true, true);
         } catch (Exception ex) {
             Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
                     "Can't load Tile: " + tile.toString(), ex);
