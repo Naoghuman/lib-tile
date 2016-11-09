@@ -16,13 +16,20 @@
  */
 
 /**
- * This package contains the main <code>Classes</code> and <code>Interfaces</code> which 
- * allowed the developer to load a {@link com.github.naoghuman.lib.tile.core.Tile} (which is 
- * per definition a little transparent Image) as a {@link javafx.scene.layout.Background} or 
- * an {@link javafx.scene.image.Image} with a concrete implementation from an 
- * {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * This package contains the main <code>API</code> from the library <code>Lib-Core</code>.
+ * <p />
+ * With this <code>Classes</code> and <code>Interfaces</code> the developer can load a 
+ * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a little 
+ * transparent Image) as a {@link javafx.scene.layout.Background} or an 
+ * {@link javafx.scene.image.Image}.
+ * <p />
+ * Main point for access the functionalities from this library is the class 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider}. For example with the method 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * the developer can load the <code>Tile</code> as an {@link javafx.scene.layout.Background}.
  * 
- * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image

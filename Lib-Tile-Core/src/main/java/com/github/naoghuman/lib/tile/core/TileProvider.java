@@ -16,8 +16,7 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
-import com.github.naoghuman.lib.tile.core.validator.DefaultTileValidator;
-import com.github.naoghuman.lib.tile.core.validator.TileValidator;
+import com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator;
 import java.net.URI;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -59,6 +58,17 @@ public final class TileProvider {
 
     }
 
+    /**
+     * This method returns a concrete implementation from the
+     * <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileValidator} 
+     * which can be used to validate a) is a {@link java.lang.Double} greater then
+     * 0.0d or b) if a {@link java.lang.String} isn't NULL or EMPTY.
+     *
+     * @return a concrete implementation from the <code>Interface</code>
+     * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator}.
+     * @see com.github.naoghuman.lib.tile.core.TileValidator
+     * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
+     */
     public TileValidator getDefaultTileValidator() {
         return DefaultTileValidator.getDefault();
     }
@@ -69,36 +79,21 @@ public final class TileProvider {
      * {@link javafx.scene.image.Image} which will be converted to a
      * {@link javafx.scene.layout.Background}.
      * <p />
-     * Internal following checks will be performed:
-     * <ul>
-     * <li>Checks if the {@link com.github.naoghuman.lib.tile.core.TileLoader}
-     * supports the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
-     * {@link java.lang.UnsupportedOperationException} is thrown.</li>
-     * <li>Checks if the parameters 'width' and 'height' from the
-     * <code>Tile</code> is greater then 0.0d. If not the a
-     * IllegalArgumentException will be thrown.</li>
-     * <li>Checks if the parameter 'imageName' from the <code>Tile</code> is not
-     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
-     * IllegalArgumentException.</li>
-     * <li>Checks if the parameter 'title' from the <code>Tile</code> is not
-     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
-     * IllegalArgumentException.</li>
-     * </ul>
-     *
-     * @param loader loads the given
-     * {@link com.github.naoghuman.lib.tile.core.Tile} as an
-     * {@link javafx.scene.image.Image} which will then be converted to a
+     * Internal the parameter from the <code>Tile</code> will be checked with 
+     * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
+     * against the their defined rules.
+     * 
+     * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * as an {@link javafx.scene.image.Image} which will then be converted to a
      * {@link javafx.scene.layout.Background}.
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.layout.Background}.
      * @return the loaded {@link javafx.scene.layout.Background}.
      * @see com.github.naoghuman.lib.tile.core.TileLoader
      * @see com.github.naoghuman.lib.tile.core.Tile
+     * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
      * @see javafx.scene.layout.Background
      * @see javafx.scene.image.Image
-     * @see #checkParameterDimension(double, double)
-     * @see #checkParameterImageName(java.lang.String)
-     * @see #checkParameterTitle(java.lang.String)
      */
     public Background loadAsBackground(final TileLoader loader, final Tile tile) {
         final Image overlay = TileProvider.getDefault().loadAsImage(loader, tile);
@@ -113,37 +108,21 @@ public final class TileProvider {
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
-     * {@link javafx.scene.image.Image}.
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an {@link javafx.scene.image.Image}.
      * <p />
-     * Internal following checks will be performed:
-     * <ul>
-     * <li>Checks if the {@link com.github.naoghuman.lib.tile.core.TileLoader}
-     * supports the {@link com.github.naoghuman.lib.tile.core.Tile}. If not an
-     * {@link java.lang.UnsupportedOperationException} is thrown.</li>
-     * <li>Checks if the parameters 'width' and 'height' from the
-     * <code>Tile</code> is greater then 0.0d. If not the a
-     * IllegalArgumentException will be thrown.</li>
-     * <li>Checks if the parameter 'imageName' from the <code>Tile</code> is not
-     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
-     * IllegalArgumentException.</li>
-     * <li>Checks if the parameter 'title' from the <code>Tile</code> is not
-     * NULL and not EMPTY. Throws otherwise a NullPointerException or a
-     * IllegalArgumentException.</li>
-     * </ul>
+     * Internal the parameter from the <code>Tile</code> will be checked with 
+     * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
+     * against the their defined rules.
      *
-     * @param loader loads the given
-     * {@link com.github.naoghuman.lib.tile.core.Tile} as an
-     * {@link javafx.scene.image.Image}.
+     * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * as an {@link javafx.scene.image.Image}.
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as an {@link javafx.scene.image.Image}.
      * @return the loaded {@link javafx.scene.image.Image}.
      * @see com.github.naoghuman.lib.tile.core.TileLoader
      * @see com.github.naoghuman.lib.tile.core.Tile
+     * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
      * @see javafx.scene.image.Image
-     * @see #checkParameterDimension(double, double)
-     * @see #checkParameterImageName(java.lang.String)
-     * @see #checkParameterTitle(java.lang.String)
      */
     public Image loadAsImage(final TileLoader loader, final Tile tile) {
         if (!loader.isSupported(tile)) {

@@ -21,7 +21,7 @@ import javafx.scene.layout.Background;
 
 /**
  * This interface defines the minimal functionalities which should be supported
- * by an <code>TileLoader</code>. With a concrete implementation from this 
+ * by an <code>TileLoader</code>. With a concrete implementation from this
  * <code>Interface</code> its then be possible to load a
  * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
  * little transparent Image) as a {@link javafx.scene.layout.Background} or an
@@ -35,11 +35,11 @@ import javafx.scene.layout.Background;
 public interface TileLoader {
 
     /**
-     * The parameter <code>prefix</code> defines if the
-     * {@link com.github.naoghuman.lib.tile.core.Tile} is supported by this
-     * <code>TileLoader</code> or not.
+     * With the parameter <code>prefix</code> a concrete implementation from this 
+     * <code>Interface</code> defines if a given {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * is supported by this <code>TileLoader</code> or not.
      *
-     * @return the prefix which defines if the{@link com.github.naoghuman.lib.tile.core.Tile} 
+     * @return the prefix which defines if the {@link com.github.naoghuman.lib.tile.core.Tile} 
      * is supported or not by this <code>TileLoader</code>.
      * @see com.github.naoghuman.lib.tile.core.Tile
      */
@@ -50,7 +50,8 @@ public interface TileLoader {
      * supported by this <code>TileLoader</code>.
      *
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be checked if it's supported by this <code>TileLoader</code> or not.
+     * should be checked if it's supported by this <code>TileLoader</code> or
+     * not.
      * @return <code>true</code> if the {@link com.github.naoghuman.lib.tile.core.Tile} 
      * is supported by this <code>TileLoader</code>, otherwise <code>false</code>.
      * @see com.github.naoghuman.lib.tile.core.Tile
@@ -64,7 +65,7 @@ public interface TileLoader {
      * {@link javafx.scene.layout.Background}.
      * <p />
      * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(TileLoader, Tile)}.
+     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)}.
      * For additional information plz see the JavaDoc there.
      * <br />
      * See for an example the method
@@ -74,12 +75,16 @@ public interface TileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.layout.Background}.
      * @return the loaded {@link javafx.scene.layout.Background}.
-     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(TileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)
      * @see com.github.naoghuman.lib.tile.core.Tile
      * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)
      * @see javafx.scene.layout.Background
      * @see javafx.scene.image.Image
+     * @deprecated This method is deprecated with version 0.2.0. As an
+     * alternative {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)}
+     * should be used.
      */
+    @Deprecated
     public Background loadAsBackground(Tile tile);
 
     /**
@@ -88,7 +93,7 @@ public interface TileLoader {
      * {@link javafx.scene.image.Image}.
      * <p />
      * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(TileLoader, Tile)}.
+     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
      * For additional information plz see the JavaDoc there.
      * <br />
      * See for example the method
@@ -98,11 +103,16 @@ public interface TileLoader {
      * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
      * should be loaded as a {@link javafx.scene.image.Image}.
      * @return the loaded {@link javafx.scene.image.Image}.
-     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(TileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)
      * @see com.github.naoghuman.lib.tile.core.Tile
-     * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)
+     * @see
+     * com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)
      * @see javafx.scene.image.Image
+     * @deprecated This method is deprecated with version 0.2.0. As an alternative
+     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}
+     * should be used.
      */
+    @Deprecated
     public Image loadAsImage(Tile tile);
 
 }

@@ -14,29 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.naoghuman.lib.tile.core.validator;
+package com.github.naoghuman.lib.tile.core.internal;
 
+import com.github.naoghuman.lib.tile.core.TileValidator;
 import java.util.Optional;
 
 /**
- * This concrete implementation from the <code>Interface</code>
- * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator} can be
- * used to validate a) is a {@link java.lang.Double} greater then 0.0d or b) if
- * a {@link java.lang.String} isn't NULL or EMPTY.
+ * A concrete implementation from the <code>Interface</code>
+ * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator} which can
+ * be used to validate a) is a {@link java.lang.Double} greater then 0.0d or b)
+ * if a {@link java.lang.String} isn't NULL or EMPTY.
+ * <p />
+ * The class can be accessed over
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.validator.TileValidator
+ * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
+ * @see com.github.naoghuman.lib.tile.core.TileValidator
  */
 public final class DefaultTileValidator implements TileValidator {
 
     private static final Optional<DefaultTileValidator> instance = Optional.of(new DefaultTileValidator());
 
     /**
-     * Returns a singleton instance from the class
-     * <code>DefaultTileValidator</code>.
+     * Returns a singleton instance from the class <code>DefaultTileValidator</code>.
      *
-     * @return a singleton instance from the class
-     * <code>DefaultTileValidator</code>.
+     * @return a singleton instance from the class <code>DefaultTileValidator</code>.
      */
     public static final DefaultTileValidator getDefault() {
         return instance.get();
@@ -49,7 +52,7 @@ public final class DefaultTileValidator implements TileValidator {
     @Override
     public void validate(double value) throws IllegalArgumentException {
         if (value <= 0.0d) {
-            throw new IllegalArgumentException("The value can't <= 0.0d"); // NOI18N
+            throw new IllegalArgumentException("Parameter can't <= 0.0d"); // NOI18N
         }
     }
 
