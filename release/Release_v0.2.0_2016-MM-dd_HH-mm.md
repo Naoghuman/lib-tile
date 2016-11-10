@@ -40,6 +40,7 @@ layer.
 
 
 #### Additional
+#10 [pom] Update dependency to maven-compiler-plugin.
 
 
 
@@ -49,6 +50,7 @@ Naoghuman (Peter Rogge)
 
 
 [//]: # (Issues which will be integrated in this release)
+#9 [Lib-Tile] Rework the API for the library. (Enhancement)
 
 
 
