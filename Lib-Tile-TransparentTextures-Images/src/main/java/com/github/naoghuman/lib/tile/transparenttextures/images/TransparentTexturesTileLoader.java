@@ -25,7 +25,7 @@ import com.github.naoghuman.lib.tile.core.TileLoader;
 
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the interface {@link com.github.naoghuman.lib.tile.core.TileLoader}.
+ * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 

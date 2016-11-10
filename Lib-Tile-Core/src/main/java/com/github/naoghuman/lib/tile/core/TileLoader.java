@@ -21,8 +21,8 @@ import javafx.scene.layout.Background;
 
 /**
  * This interface defines the minimal functionalities which should be supported
- * by an <code>TileLoader</code>. With a concrete implementation from this
- * <code>Interface</code> its then be possible to load a
+ * by a <code>TileLoader</code>. With a concrete implementation from this
+ * <code>Interface</code> it's then be possible to load a
  * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
  * little transparent Image) as a {@link javafx.scene.layout.Background} or an
  * {@link javafx.scene.image.Image}.
@@ -49,9 +49,8 @@ public interface TileLoader {
      * Checks the given {@link com.github.naoghuman.lib.tile.core.Tile} if it's
      * supported by this <code>TileLoader</code>.
      *
-     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be checked if it's supported by this <code>TileLoader</code> or
-     * not.
+     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which should be 
+     * checked if it's supported by this <code>TileLoader</code> or not.
      * @return <code>true</code> if the {@link com.github.naoghuman.lib.tile.core.Tile} 
      * is supported by this <code>TileLoader</code>, otherwise <code>false</code>.
      * @see com.github.naoghuman.lib.tile.core.Tile

@@ -39,7 +39,7 @@ public final class DefaultTileValidator implements TileValidator {
     /**
      * Returns a singleton instance from the class <code>DefaultTileValidator</code>.
      *
-     * @return a singleton instance from the class <code>DefaultTileValidator</code>.
+     * @return a singleton instance from this class.
      */
     public static final DefaultTileValidator getDefault() {
         return instance.get();

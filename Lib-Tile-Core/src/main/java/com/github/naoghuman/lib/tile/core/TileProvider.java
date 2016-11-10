@@ -48,7 +48,7 @@ public final class TileProvider {
     /**
      * Returns a singleton instance from the class <code>TileProvider</code>.
      *
-     * @return a singleton instance from the class <code>TileProvider</code>.
+     * @return a singleton instance from this class.
      */
     public static final TileProvider getDefault() {
         return instance.get();
@@ -81,7 +81,13 @@ public final class TileProvider {
      * <p />
      * Internal the parameter from the <code>Tile</code> will be checked with 
      * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
-     * against the their defined rules.
+     * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
+     * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
+     * <p />
+     * Following parameters in the <code>Tile</code> will be checked by default:
+     * <ul>
+     * <li>imageName, title, width, height</li>
+     * </ul>
      * 
      * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
      * as an {@link javafx.scene.image.Image} which will then be converted to a
@@ -112,7 +118,13 @@ public final class TileProvider {
      * <p />
      * Internal the parameter from the <code>Tile</code> will be checked with 
      * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
-     * against the their defined rules.
+     * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
+     * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
+     * <p />
+     * Following parameters in the <code>Tile</code> will be checked by default:
+     * <ul>
+     * <li>imageName, title, width, height</li>
+     * </ul>
      *
      * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
      * as an {@link javafx.scene.image.Image}.

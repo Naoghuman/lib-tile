@@ -17,7 +17,7 @@
 package com.github.naoghuman.lib.tile.core;
 
 /**
- * This <code>Interface</code> can be used to create a <code>TileValidator</code> 
+ * With this <code>Interface</code> its possible to create a <code>TileValidator</code> 
  * which can be used to validate a {@link java.lang.Double} or a {@link java.lang.String} 
  * against still to be defined rules.
  * <p />
@@ -25,7 +25,8 @@ package com.github.naoghuman.lib.tile.core;
  * the class {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}
  * which validates if a) is a {@link java.lang.Double} greater then 0.0d or b)
  * if a {@link java.lang.String} isn't NULL or EMPTY. The class <code>DefaultTileValidator</code> 
- * can be accessed over {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}.
+ * can be accessed over {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}
+ * if needed.
  *
  * @author Naoghuman
  * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
@@ -55,8 +56,7 @@ public interface TileValidator {
     public void validate(double value) throws IllegalArgumentException;
 
     /**
-     * This method validates if the parameter <code>value</code> isn't NULL or
-     * EMPTY.
+     * This method validates if the parameter <code>value</code> isn't NULL or EMPTY.
      *
      * @param value the parameter which should be validated.
      * @throws NullPointerException if (value == NULL).
