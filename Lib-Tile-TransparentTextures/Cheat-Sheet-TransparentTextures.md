@@ -8,7 +8,7 @@ Intention
 ---
 
 In this file all `values` from the enum `TransparentTexturesTile` are listet. 
-Momentary that are `396` [Tile]s in it defined.
+Momentary that are `396` [Tile]s defined.
 
 
 
@@ -4027,11 +4027,5 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Links)
-[AbstractTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/AbstractTileLoader.java
-[Download]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Download
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
-[Installation]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Installation
-[Lib-Tile]:https://github.com/Naoghuman/lib-tile
-[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile-transparenttextures-images
-[Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java

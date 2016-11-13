@@ -13,10 +13,10 @@ through the enum `TransparentTexturesTile`. Momentary that are `396` [Tile]s.
 
 The tile images from this tileset are outsourced in a own library 
 [Lib-Tile-TransparentTextures-Images] to reduce the size from this library. One 
-more advance is that you can use an `own` [AbstractTileLoader] in combination 
-with the library `Lib-Tile-TransparentTextures`. So you don't need to include the 
-library [Lib-Tile-TransparentTextures-Images] into your project which size is 
-momenatry `13MB`.
+more advance is that you can use an `own` [TileLoader] in combination with the 
+library `Lib-Tile-TransparentTextures`. So you don't need to include the hole 
+library (with all 396 images) [Lib-Tile-TransparentTextures-Images] into your 
+project which size is momenatry `13MB`.
 
 > __Hint__  
 > This libray is a part from the project [Lib-Tile]. Plz see for additional 
@@ -68,16 +68,15 @@ Api<a name="Api" />
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
-public enum TransparentTexturesTile implements Tile {
+public enum TransparentTexturesTile implements Tile
 ```
 
 
 <br />
 ### Cheat-Sheet TransparentTextures<a name="ChShTrTe" />
 
-In the [Cheat-Sheet from TransparentTextures] all [Tile]s from the webpage 
-https://www.transparenttextures.com/ are listed with the `name` from the value 
-in the enum `TransparentTexturesTile`. Momentary that are `396` [Tile]s defined.
+In the [Cheat-Sheet from TransparentTextures] all `396` [Tile]s from the webpage 
+https://www.transparenttextures.com/ are listed in the enum `TransparentTexturesTile`.
 
 
 
@@ -111,7 +110,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Links)
-[AbstractTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/AbstractTileLoader.java
 [Cheat-Sheet from TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/Cheat-Sheet-TransparentTextures.md
 [Download]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Download
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -120,3 +118,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile-transparenttextures-images
 [Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
+[TileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileLoader.java

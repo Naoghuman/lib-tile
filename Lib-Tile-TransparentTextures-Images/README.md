@@ -64,57 +64,19 @@ Api<a name="Api" />
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements AbstractTileLoader {
+public final class TransparentTexturesTileLoader implements AbstractTileLoader
 ```
 
-<br />
+
 ```Java
+private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
+
 /**
  * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
  * 
  * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
  */
-public static final TransparentTexturesTileLoader getDefault() {
-    return instance.get();
-}
-```
-
-<br />
-```Java
-@Override
-public String getPrefix() {
-    return "tt-"; // NOI18N
-}
-```
-
-<br />
-```Java
-@Override
-public boolean isSupported(final Tile tile) {
-    final String name = tile.getImageName();
-    final boolean isSupported = 
-            (name != null)
-            && (!name.trim().isEmpty())
-            && (name.startsWith(this.getPrefix()));
-
-    return isSupported;
-}
-```
-
-<br />
-```Java
-@Override
-public Background loadAsBackground(final Tile tile) {
-    return DefaultTileLoader.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
-}
-```
-
-<br />
-```Java
-Override
-public Image loadAsImage(final Tile tile) {
-    return DefaultTileLoader.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
-}
+public static final TransparentTexturesTileLoader getDefault()
 ```
 
 
