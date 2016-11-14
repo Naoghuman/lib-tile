@@ -50,21 +50,28 @@ Api<a name="Api" />
 ```Java
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
  * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ * <p />
+ * The class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}
+ * should be used as a concrete implementation from the <code>Interface</code>
+ * {@link com.github.naoghuman.lib.tile.core.TileLoader} to load the <code>Tile</code>
+ * with the help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements AbstractTileLoader
+public final class TransparentTexturesTileLoader implements TileLoader
 ```
 
 

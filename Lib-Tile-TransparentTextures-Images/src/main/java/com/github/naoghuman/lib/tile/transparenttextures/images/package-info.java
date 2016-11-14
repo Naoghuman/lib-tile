@@ -17,12 +17,19 @@
 
 /**
  * The main functionality from this package is to allowed the developer to load 
- * a {@link com.github.naoghuman.lib.tile.core.Tile} which must be defined in the 
- * enum {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} 
- * as a {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} 
- * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}.
+ * a {@link com.github.naoghuman.lib.tile.core.Tile} from the enum 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} 
+ * as a {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ * <p />
+ * The class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}
+ * should be used as a concrete implementation from the <code>Interface</code>
+ * {@link com.github.naoghuman.lib.tile.core.TileLoader} to load the <code>Tile</code>
+ * with the help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */

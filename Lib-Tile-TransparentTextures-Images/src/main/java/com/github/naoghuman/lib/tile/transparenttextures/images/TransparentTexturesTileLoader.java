@@ -31,10 +31,17 @@ import com.github.naoghuman.lib.tile.core.TileLoader;
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
  * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ * <p />
+ * The class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}
+ * should be used as a concrete implementation from the <code>Interface</code>
+ * {@link com.github.naoghuman.lib.tile.core.TileLoader} to load the <code>Tile</code>
+ * with the help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
@@ -72,11 +79,13 @@ public final class TransparentTexturesTileLoader implements TileLoader {
         return isSupported;
     }
 
+    @Deprecated
     @Override
     public Background loadAsBackground(final Tile tile) {
         return TileProvider.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
+    @Deprecated
     @Override
     public Image loadAsImage(final Tile tile) {
         return TileProvider.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
