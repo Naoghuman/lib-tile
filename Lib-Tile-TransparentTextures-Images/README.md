@@ -12,6 +12,9 @@ tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader]
 which allowed the developer to load a [Tile] image from the enum 
 [TransparentTexturesTile].
 
+The images can be accessed over the `Enum` [TransparentTexturesTile] from the 
+library [Lib-Tile-TransparentTextures].
+
 > __Hint__  
 > This libray is a part from the project [Lib-Tile]. Plz see for additional 
 > informations like [Download], [Requirements] or [Installation] there. Thanks :smile:
@@ -23,7 +26,7 @@ Content
 ---
 
 * [Examples](#Examples)
-* [Api](#Api)
+* [API](#API)
     * [com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader](#TrTeTiLo)
 * [License](#License)
 * [Autor](#Autor)
@@ -35,17 +38,17 @@ Content
 Examples<a name="Examples" />
 ---
 
-TODO Add in later version examples how to use this `api`.
+TODO Add in later version examples how to use this `API`.
 
 
 
 <br />
-Api<a name="Api" />
+API<a name="API" />
 ---
 
 
 <br />
-### com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile<a name="TrTeTi" />
+### com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader<a name="TrTeTi" />
 
 ```Java
 /**
@@ -55,12 +58,8 @@ Api<a name="Api" />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
- * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
- * <p />
- * The class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}
- * should be used as a concrete implementation from the <code>Interface</code>
- * {@link com.github.naoghuman.lib.tile.core.TileLoader} to load the <code>Tile</code>
- * with the help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} with the 
+ * help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
  * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @author Naoghuman
@@ -122,6 +121,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Installation]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Installation
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile-transparenttextures
 [Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java

@@ -30,12 +30,8 @@ import com.github.naoghuman.lib.tile.core.TileLoader;
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
- * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
- * <p />
- * The class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}
- * should be used as a concrete implementation from the <code>Interface</code>
- * {@link com.github.naoghuman.lib.tile.core.TileLoader} to load the <code>Tile</code>
- * with the help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} with the 
+ * help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
  * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @author Naoghuman
