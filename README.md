@@ -283,7 +283,7 @@ For more informations and examples plz see the [ReadMe from Lib-Tile-Transparent
 
 The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
 tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader] 
-which allowed the developer to load a [Tile] image from the enum 
+which allowed the developer to load a [Tile] image from the `Enum` 
 [TransparentTexturesTile].
 
 <br />
@@ -291,16 +291,19 @@ Class [TransparentTexturesTileLoader]
 ```java
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the interface {@link com.github.naoghuman.lib.tile.core.TileLoader}.
+ * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
  * <p />
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
- * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} with the 
+ * help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
+ * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
