@@ -14,9 +14,9 @@
     <inceptionYear>2016</inceptionYear>
     <url>https://github.com/Naoghuman/lib-tile.git</url>
     
-    <description>With the library Lib-Tile-TransparentTextures the developer have access to the tileset Transparent Textures from the internet page https://www.transparenttextures.com/ through the enum TransparentTexturesTile.
+    <description>With the library `Lib-Tile-TransparentTextures` the developer have access to the tileset `Transparent Textures` from the internet page https://www.transparenttextures.com/ through the enum `TransparentTexturesTile`. Momentary that are `396` Tiles.
 
-The tile images from this tileset are outsourced in a own library Lib-Tile-TransparentTextures-Images to reduce the size from this library. One more advance is that you can use an own AbstractTileLoader in combination with the library Lib-Tile-TransparentTextures. So you don't need to include the library Lib-Tile-TransparentTextures-Images into your project which size is momenatry 13MB.</description>
+The tile images from this tileset are outsourced in a own library Lib-Tile-TransparentTextures-Images to reduce the size from this library. One more advance is that you can use an `own` TileLoader in combination with the library `Lib-Tile-TransparentTextures`. So you don't need to include the hole library (with all 396 images) Lib-Tile-TransparentTextures-Images into your project which size is momenatry `13MB`.</description>
     
     <build>
         <defaultGoal>clean package</defaultGoal>

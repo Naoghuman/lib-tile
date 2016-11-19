@@ -14,7 +14,9 @@
     <inceptionYear>2016</inceptionYear>
     <url>https://github.com/Naoghuman/lib-tile.git</url>
     
-    <description>The library Lib-Tile-TransparentTextures-Images contains all images from the tileset Transparent Textures and the loader TransparentTexturesTileLoader which allowed the developer to load a Tile image from the enum TransparentTexturesTile.</description>
+    <description>The library `Lib-Tile-TransparentTextures-Images` contains all images from the tileset `Transparent Textures` and the loader TransparentTexturesTileLoader which allowed the developer to load a Tile image from the enum TransparentTexturesTile.
+
+The images can be accessed over the enum `TransparentTexturesTile` from the library Lib-Tile-TransparentTextures.</description>
     
     <build>
         <defaultGoal>clean package</defaultGoal>

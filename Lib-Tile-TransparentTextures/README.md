@@ -58,17 +58,45 @@ Api<a name="Api" />
 /**
  * The <code>enum</code> TransparentTexturesTile is a collection from 
  * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
- * <code>Tileset</code> from the internet page https://www.transparenttextures.com/.
+ * <code>Tileset</code> from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
  * <p />
- * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
- * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader} 
- * from the associated library <code>Lib-Tile-TransparentTextures-Images</code>.
- *
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded over the class 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider} with the help from the concrete class 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}.
+ * <br />
+ * See there the methods 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }
+ * and {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }.
+ * <p>
+ * Additional informations:
+ * <br />
+ * The parameters from the initialisation in this <code>Tileset</code> will be validate with the class 
+ * {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}. <code>DefaultTileValidator</code> 
+ * allowed basic checks, for example if a {@link java.lang.String} is <code>NULL</code> or <code>EMPTY</code>.
+ * 
  * @author Naoghuman
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ * @see com.github.naoghuman.lib.tile.core.TileValidator
+ * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
 public enum TransparentTexturesTile implements Tile
+```
+
+```Java
+/**
+ * The <code>Java</code> representation from the tile: 3Px Tile
+ */
+TT_3PX_TILE("tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"), // NOI18N
+    
+/**
+ * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
+ */
+TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"), // NOI18N
+
+...
 ```
 
 
@@ -115,7 +143,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Installation]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Installation
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
-[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile-transparenttextures-images
+[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures-Images
 [Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileLoader.java

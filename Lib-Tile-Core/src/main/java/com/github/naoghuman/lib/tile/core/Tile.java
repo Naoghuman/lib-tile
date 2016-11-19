@@ -31,7 +31,8 @@ public interface Tile {
      * The autor is the creator from the <code>Tile</code>.
      * <p />
      * This parameter is optional. If this parameter is NULL or empty then the
-     * parameter <code>autorUrl</code> won't be evaluated.
+     * parameter <code>autorUrl</code> shouldn't be evaluated for the display in 
+     * the gui.
      *
      * @return the autor from the <code>Tile</code>.
      * @see #getAutorUrl()
@@ -42,7 +43,8 @@ public interface Tile {
      * The autor url from the <code>Tile</code>.
      * <p />
      * This parameter is optional. If the parameter <code>autor</code> is NULL
-     * or EMPTY then this parameter won't be evaluated.
+     * or EMPTY then this parameter shouldn't be evaluated for the display in 
+     * the gui.
      *
      * @return the autor url from the <code>Tile</code>.
      * @see #getAutor()

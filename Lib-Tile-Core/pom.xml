@@ -14,7 +14,9 @@
     <inceptionYear>2016</inceptionYear>
     <url>https://github.com/Naoghuman/lib-tile.git</url>
     
-    <description>The library `Lib-Tile-Core` provides the API to load a Tile (which is per definition a little transparent Image) as a Background or an Image with a concrete implementation from a TileLoader.</description>
+    <description>The library `Lib-Tile-Core` provides the API to load a Tile (which is per definition a little transparent Image) as a Background or an Image with a concrete implementation from a TileLoader.
+
+The main point for access the functionalities from this &lt;code&gt;API&lt;/code&gt; is the class TileProvider. For example with the method TileProvider#loadAsBackground(TileLoader, Tile) the developer can load a Tile as an Background.</description>
     
     <build>
         <defaultGoal>clean package</defaultGoal>

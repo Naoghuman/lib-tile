@@ -16,10 +16,19 @@
  */
 
 /**
- * This package allowed access to the tileset <code>Transparent Textures<code> 
- * from the internet page https://www.transparenttextures.com/ through the enum 
- * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile}.
+ * This package allowed access to the tileset <code>Transparent Textures<code> from the internet page 
+ * <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a> through 
+ * the enum {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile}.
+ * <p />
+ * The {@link javafx.scene.image.Image}s from the specifically {@link com.github.naoghuman.lib.tile.core.Tile}s 
+ * are outsourced into the library <code>Lib-Tile-TransparentTextures-Images</code> with the attention to 
+ * reduce the size from this library and to allowed the customized loading from <code>Tiles</code> 
+ * and {@link javafx.scene.image.Image}s.
+ * <p />
+ * TODO add more info for customized loading.
  * 
+ * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
+ * @see javafx.scene.image.Image
  */
 package com.github.naoghuman.lib.tile.transparenttextures;

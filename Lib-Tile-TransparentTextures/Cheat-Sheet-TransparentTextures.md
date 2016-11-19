@@ -426,17 +426,31 @@ com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile<a name
 /**
  * The <code>enum</code> TransparentTexturesTile is a collection from 
  * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
- * <code>Tileset</code> from the internet page https://www.transparenttextures.com/.
+ * <code>Tileset</code> from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
  * <p />
- * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
- * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader} 
- * from the associated library <code>Lib-Tile-TransparentTextures-Images</code>.
- *
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded over the class 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider} with the help from the concrete class 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}.
+ * <br />
+ * See there the methods 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }
+ * and {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }.
+ * <p>
+ * Additional informations:
+ * <br />
+ * The parameters from the initialisation in this <code>Tileset</code> will be validate with the class 
+ * {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}. <code>DefaultTileValidator</code> 
+ * allowed basic checks, for example if a {@link java.lang.String} is <code>NULL</code> or <code>EMPTY</code>.
+ * 
  * @author Naoghuman
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ * @see com.github.naoghuman.lib.tile.core.TileValidator
+ * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
-public enum TransparentTexturesTile implements Tile {
+public enum TransparentTexturesTile implements Tile 
 ```
 
 
