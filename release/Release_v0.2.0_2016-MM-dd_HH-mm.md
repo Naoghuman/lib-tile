@@ -20,6 +20,7 @@ layer.
 
 
 #### Enhancement
+#9 [Lib-Tile] Rework the API for the library.
 #4 [Documentation] Add a template for the release-notes.
 
 
@@ -50,7 +51,6 @@ Naoghuman (Peter Rogge)
 
 
 [//]: # (Issues which will be integrated in this release)
-#9 [Lib-Tile] Rework the API for the library. (Enhancement)
 
 
 
