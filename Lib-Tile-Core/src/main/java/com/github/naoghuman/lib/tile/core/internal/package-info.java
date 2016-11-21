@@ -22,10 +22,10 @@
  * For example the class {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}
  * which is a concrete implementation from the <code>Interface</code> 
  * {@link com.github.naoghuman.lib.tile.core.TileValidator} can be accessed over 
- * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator}.
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}.
  * 
  * @see com.github.naoghuman.lib.tile.core.Tile
- * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator
+ * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
  * @see com.github.naoghuman.lib.tile.core.TileValidator
  * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  */

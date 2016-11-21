@@ -16,6 +16,7 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
+import com.github.naoghuman.lib.tile.core.internal.DefaultTile;
 import com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator;
 import java.net.URI;
 import java.util.Optional;
@@ -56,6 +57,41 @@ public final class TileProvider {
 
     private TileProvider() {
 
+    }
+    
+    /**
+     * 
+     * @param imageName
+     * @param title
+     * @param width
+     * @param height
+     * @param autor
+     * @return 
+     */
+    public Tile getDefaultTile(
+            final String imageName, final String title,
+            final double width, final double height,
+            final String autor
+    ) {
+        return new DefaultTile(imageName, title, width, height, autor);
+    }
+    
+    /**
+     * 
+     * @param imageName
+     * @param title
+     * @param width
+     * @param height
+     * @param autor
+     * @param autorUrl
+     * @return 
+     */
+    public Tile getDefaultTile(
+            final String imageName, final String title,
+            final double width, final double height,
+            final String autor, final String autorUrl
+    ) {
+        return new DefaultTile(imageName, title, width, height, autor, autorUrl);
     }
 
     /**

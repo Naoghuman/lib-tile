@@ -18,6 +18,7 @@ package com.github.naoghuman.lib.tile.transparenttextures;
 
 import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileProvider;
+import com.github.naoghuman.lib.tile.core.TileSet;
 
 /**
  * The <code>enum</code> TransparentTexturesTile is a collection from 
@@ -46,7 +47,7 @@ import com.github.naoghuman.lib.tile.core.TileProvider;
  * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
-public enum TransparentTexturesTile implements Tile {
+public enum TransparentTexturesTile implements TileSet {
 
     /**
      * The <code>Java</code> representation from the tile: 3Px Tile
@@ -2024,13 +2025,7 @@ public enum TransparentTexturesTile implements Tile {
      */
     TT_ZIG_ZAG("tt-zig-zag.png", "Zig Zag", 10, 10, "Dmitriy Prodchenko", "http://www.behance.net/dmpr0"); // NOI18N
 
-    private final double height;
-    private final double width;
-
-    private final String autor;
-    private final String autorUrl;
-    private final String imageName;
-    private final String title;
+    private final Tile tile;
 
     TransparentTexturesTile(
             final String imageName, final String title,
@@ -2045,78 +2040,17 @@ public enum TransparentTexturesTile implements Tile {
             final double width, final double height,
             final String autor, final String autorUrl
     ) {
-        TileProvider.getDefault().getDefaultTileValidator().validate(imageName);
-        this.imageName = imageName;
-        
-        TileProvider.getDefault().getDefaultTileValidator().validate(title);
-        this.title = title;
-        
-        TileProvider.getDefault().getDefaultTileValidator().validate(width);
-        this.width = width;
-        
-        TileProvider.getDefault().getDefaultTileValidator().validate(height);
-        this.height = height;
-        
-        this.autor = autor;
-        this.autorUrl = autorUrl;
+        tile = TileProvider.getDefault().getDefaultTile(imageName, title, width, height, autor, autorUrl);
     }
 
     @Override
-    public String getAutor() {
-        return autor;
-    }
-
-    @Override
-    public String getAutorUrl() {
-        return autorUrl;
-    }
-
-    @Override
-    public double getHeight() {
-        return height;
-    }
-
-    @Override
-    public String getImageName() {
-        return imageName;
-    }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public double getWidth() {
-        return width;
+    public Tile getTile() {
+        return tile;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Tile ["); // NOI18N
-        sb.append("imageName=").append(this.getImageName()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("title=").append(this.getTitle()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("w=").append(this.getWidth()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("h=").append(this.getHeight()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("autor=").append(this.getAutor()); // NOI18N
-        
-        final String autorUrl = this.getAutorUrl();
-        if (
-                (autorUrl != null)
-                && (!autorUrl.isEmpty())
-        ) {
-            sb.append(", "); // NOI18N
-            sb.append("autorUrl=").append(autorUrl); // NOI18N
-        }
-                
-        sb.append("]"); // NOI18N
-        
-        return sb.toString();
+        return tile.toString();
     }
     
 }

@@ -16,6 +16,8 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
+import java.util.Objects;
+
 /**
  * With this <code>Interface</code> its possible to create a <code>TileValidator</code> 
  * which can be used to validate a {@link java.lang.Double} or a {@link java.lang.String} 
@@ -41,9 +43,7 @@ public interface TileValidator {
      * @throws NullPointerException if (value == NULL).
      */
     public default void validateIsNotNull(String value) throws NullPointerException {
-        if (value == null) {
-            throw new NullPointerException("The value can't be NULL"); // NOI18N
-        }
+        Objects.requireNonNull(value, "The value can't be NULL"); // NOI18N
     }
 
     /**

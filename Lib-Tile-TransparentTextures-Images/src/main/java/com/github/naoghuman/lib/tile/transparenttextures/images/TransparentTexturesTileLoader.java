@@ -16,12 +16,9 @@
  */
 package com.github.naoghuman.lib.tile.transparenttextures.images;
 
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
 import com.github.naoghuman.lib.tile.core.Tile;
-import com.github.naoghuman.lib.tile.core.TileProvider;
-import java.util.Optional;
 import com.github.naoghuman.lib.tile.core.TileLoader;
+import java.util.Optional;
 
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
@@ -73,18 +70,6 @@ public final class TransparentTexturesTileLoader implements TileLoader {
                 && (name.startsWith(this.getPrefix()));
 
         return isSupported;
-    }
-
-    @Deprecated
-    @Override
-    public Background loadAsBackground(final Tile tile) {
-        return TileProvider.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
-    }
-
-    @Deprecated
-    @Override
-    public Image loadAsImage(final Tile tile) {
-        return TileProvider.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
     }
 
 }

@@ -16,9 +16,6 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-
 /**
  * This interface defines the minimal functionalities which should be supported
  * by a <code>TileLoader</code>. With a concrete implementation from this
@@ -56,62 +53,5 @@ public interface TileLoader {
      * @see com.github.naoghuman.lib.tile.core.Tile
      */
     public boolean isSupported(Tile tile);
-
-    /**
-     * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
-     * {@link javafx.scene.image.Image} which will be converted to a
-     * {@link javafx.scene.layout.Background}.
-     * <p />
-     * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)}.
-     * For additional information plz see the JavaDoc there.
-     * <br />
-     * See for an example the method
-     * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)}
-     * in the library <code>Lib-Tile-TransparentTextures-Images</code>.
-     *
-     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be loaded as a {@link javafx.scene.layout.Background}.
-     * @return the loaded {@link javafx.scene.layout.Background}.
-     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)
-     * @see com.github.naoghuman.lib.tile.core.Tile
-     * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)
-     * @see javafx.scene.layout.Background
-     * @see javafx.scene.image.Image
-     * @deprecated This method is deprecated with version 0.2.0. As an
-     * alternative {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)}
-     * should be used.
-     */
-    @Deprecated
-    public Background loadAsBackground(Tile tile);
-
-    /**
-     * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
-     * {@link javafx.scene.image.Image}.
-     * <p />
-     * This method delegates to the method
-     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
-     * For additional information plz see the JavaDoc there.
-     * <br />
-     * See for example the method
-     * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)}
-     * in the library <code>Lib-Tile-TransparentTextures-Images</code>.
-     *
-     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be loaded as a {@link javafx.scene.image.Image}.
-     * @return the loaded {@link javafx.scene.image.Image}.
-     * @see com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)
-     * @see com.github.naoghuman.lib.tile.core.Tile
-     * @see
-     * com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)
-     * @see javafx.scene.image.Image
-     * @deprecated This method is deprecated with version 0.2.0. As an alternative
-     * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}
-     * should be used.
-     */
-    @Deprecated
-    public Image loadAsImage(Tile tile);
 
 }
