@@ -3,7 +3,6 @@ Lib-Tile-TransparentTextures
 
 
 
-<br />
 Intention
 ---
 
@@ -24,7 +23,6 @@ project which size is momenatry `13MB`.
 
 
 
-<br />
 Content
 ---
 
@@ -38,7 +36,6 @@ Content
 
 
 
-<br />
 Examples<a name="Examples" />
 ---
 
@@ -46,12 +43,9 @@ TODO Add in later version examples how to use this `api`.
 
 
 
-<br />
 Api<a name="Api" />
 ---
 
-
-<br />
 ### com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile<a name="TrTeTi" />
 
 ```Java
@@ -100,7 +94,6 @@ TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark
 ```
 
 
-<br />
 ### Cheat-Sheet TransparentTextures<a name="ChShTrTe" />
 
 In the [Cheat-Sheet from TransparentTextures] all `396` [Tile]s from the webpage 
@@ -108,7 +101,6 @@ https://www.transparenttextures.com/ are listed in the enum `TransparentTextures
 
 
 
-<br />
 License<a name="License" />
 ---
 
@@ -116,7 +108,6 @@ The project `Lib-Tile` and all sub-projects are licensed under [General Public L
 
 
 
-<br />
 Autor<a name="Autor" />
 ---
 
@@ -125,7 +116,6 @@ See [Contact](#Contact).
 
 
 
-<br />
 Contact<a name="Contact" />
 ---
 

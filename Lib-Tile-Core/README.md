@@ -3,7 +3,6 @@ Lib-Tile-Core
 
 
 
-<br />
 Intention
 ---
 
@@ -12,7 +11,7 @@ definition a little transparent Image) as a [Background] or an [Image] with
 a concrete implementation from a [TileLoader].
 
 The main point for access the functionalities from this <code>API</code> is the 
-class [TileProvider]. For example with the method TileProvider#loadAsBackground(TileLoader, Tile) 
+class [TileProvider]. For example with the method `TileProvider#loadAsBackground(TileLoader, Tile)` 
 the developer can load a [Tile] as an [Background].
 
 > __Hint__  
@@ -21,7 +20,6 @@ the developer can load a [Tile] as an [Background].
 
 
 
-<br />
 Content
 ---
 
@@ -39,7 +37,6 @@ Content
 
 
 
-<br />
 Examples<a name="Examples" />
 ---
 
@@ -47,12 +44,10 @@ TODO Add in later version examples how to use this `api`.
 
 
 
-<br />
 Api<a name="Api" />
 ---
 
 
-<br />
 ### com.github.naoghuman.lib.tile.core.Tile<a name="Ti" />
 
 ```Java
@@ -147,7 +142,6 @@ public double getWidth()
 ```
 
 
-<br />
 ### com.github.naoghuman.lib.tile.core.TileLoader<a name="TiLo" />
 
 ```Java
@@ -260,7 +254,6 @@ public Image loadAsImage(Tile tile)
 ```
 
 
-<br />
 ### com.github.naoghuman.lib.tile.core.TileProvider<a name="TiPr" />
 
 ```Java
@@ -371,7 +364,6 @@ public Image loadAsImage(final TileLoader loader, final Tile tile)
 ```
 
 
-<br />
 ### com.github.naoghuman.lib.tile.core.TileProvider<a name="TiPr" />
 
 ```Java
@@ -430,12 +422,10 @@ public void validate(String value) throws NullPointerException, IllegalArgumentE
 ```
 
 
-<br />
 Internal<a name="In" />
 ---
 
 
-<br />
 ### com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator<a name="DeTiVa" />
 
 ```Java
@@ -469,7 +459,6 @@ public static final DefaultTileValidator getDefault()
 
 
 
-<br />
 License<a name="License" />
 ---
 
@@ -477,7 +466,6 @@ The project `Lib-Tile` and all sub-projects are licensed under [General Public L
 
 
 
-<br />
 Autor<a name="Autor" />
 ---
 
@@ -486,7 +474,6 @@ See [Contact](#Contact).
 
 
 
-<br />
 Contact<a name="Contact" />
 ---
 

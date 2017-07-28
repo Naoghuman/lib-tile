@@ -3,7 +3,6 @@ Lib-Tile-TransparentTextures-Images
 
 
 
-<br />
 Intention
 ---
 
@@ -21,7 +20,6 @@ library [Lib-Tile-TransparentTextures].
 
 
 
-<br />
 Content
 ---
 
@@ -34,7 +32,6 @@ Content
 
 
 
-<br />
 Examples<a name="Examples" />
 ---
 
@@ -42,12 +39,9 @@ TODO Add in later version examples how to use this `API`.
 
 
 
-<br />
 API<a name="API" />
 ---
 
-
-<br />
 ### com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader<a name="TrTeTi" />
 
 ```Java
@@ -87,7 +81,6 @@ public static final TransparentTexturesTileLoader getDefault()
 
 
 
-<br />
 License<a name="License" />
 ---
 
@@ -95,7 +88,6 @@ The project `Lib-Tile` and all sub-projects are licensed under [General Public L
 
 
 
-<br />
 Autor<a name="Autor" />
 ---
 
@@ -104,7 +96,6 @@ See [Contact](#Contact).
 
 
 
-<br />
 Contact<a name="Contact" />
 ---
 

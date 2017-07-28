@@ -3,11 +3,10 @@ Lib-Tile
 
 
 
-<br />
 Intention
 ---
 
-`Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 8.0.2 
+`Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 
 and provides the functionalities to use and handle easily [Tile]s in your [JavaFX] 
 application.
 
@@ -16,14 +15,12 @@ background-color or -image with the help of repetitions from the image in a laye
 
 The current `version` is `0.1.0` from 08.14.2016.
 
-<br />
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
+![different-tile-images.png][different-tile-images]
 
 > __Hint__  
 > Normally only one [Tile] can shown simultaneously. For demonstration purpose 
 > I have merge different [Tile]s in one picture.
-
-![different-tile-images.png][different-tile-images]
 
 > __Hint__  
 > This image is from the webpage https://wall.alphacoders.com. The image haven't 
@@ -34,7 +31,6 @@ _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 
 
 
-<br />
 Content
 ---
 
@@ -54,18 +50,15 @@ Content
 
 
 
-<br />
 Demo<a name="Demo" />
 ---
 
 The application [Lib-Tile-Demo] shows a `demonstration` how to use and handle 
 the features from the libraries in the project `Lib-Tile`. 
 
-<br />
-_Image:_ Default demo application
+_Image:_ Default demo application  
 ![demo-application-default.png][demo-application-default]
 
-<br />
 Momentary the developer have following features during the demo application:
 * Choose your own background image.
     * Currently only images from the internet &#040;http or https&#041; with 
@@ -78,12 +71,10 @@ Momentary the developer have following features during the demo application:
       [RadialGradient] colors through `css` &#040;[JavaFX CSS Reference Guide]&#041;.
 * Browse through all [Tile]s from the tileset `Transparent Textures`.
 
-<br />
 For more informations and examples plz see the [ReadMe from Lib-Tile-Demo].
 
 
 
-<br />
 Libraries<a name="Libraries" />
 ---
 
@@ -102,7 +93,6 @@ Currently supported is [Transparent Textures] with the libraries
 [Lib-Tile-TransparentTextures](#LiTiTrTe) and [Lib-Tile-TransparentTextures-Images](#LiTiTrTeIm).
 
 
-<br />
 ### Lib-Tile-Core<a name="LiTiCo" />
 
 The library `Lib-Tile-Core` provides the API to load a [Tile] (which is per definition 
@@ -113,7 +103,6 @@ The main point for access the functionalities from this <code>API</code> is the
 class [TileProvider]. For example with the method TileProvider#loadAsBackground(TileLoader, Tile) 
 the developer can load a [Tile] as an [Background].
 
-<br />
 Class [TileProvider]
 ```java
 /**
@@ -223,12 +212,9 @@ public Background loadAsBackground(final TileLoader loader, final Tile tile)
 public Image loadAsImage(final TileLoader loader, final Tile tile)
 ```
 
-
-<br />
 For more informations and examples plz see the [ReadMe from Lib-Tile-Core].
 
 
-<br />
 ### Lib-Tile-TransparentTextures<a name="LiTiTrTe" />
 
 With the library `Lib-Tile-TransparentTextures` the developer have access to the 
@@ -242,7 +228,6 @@ library `Lib-Tile-TransparentTextures`. So you don't need to include the library
 `Lib-Tile-TransparentTextures-Images` into your project which size is momenatry 
 `13MB`.
 
-<br />
 Enum [TransparentTexturesTile]
 ```java
 /**
@@ -278,7 +263,6 @@ public enum TransparentTexturesTile implements Tile {
 For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures].
 
 
-<br />
 ### Lib-Tile-TransparentTextures-Images<a name="LiTiTrTeIm" />
 
 The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
@@ -286,7 +270,6 @@ tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader]
 which allowed the developer to load a [Tile] image from the `Enum` 
 [TransparentTexturesTile].
 
-<br />
 Class [TransparentTexturesTileLoader]
 ```java
 /**
@@ -328,7 +311,6 @@ For more informations and examples plz see the [ReadMe from Lib-Tile-Transparent
 
 
 
-<br />
 Download<a name="Download" />
 ---
 
@@ -352,7 +334,6 @@ in dependency from your necessities:
 Access to the downloads are here: [Download Lib-Tile]
 
 
-<br />
 Requirements<a name="Requirements" />
 ---
 
@@ -360,7 +341,6 @@ Requirements<a name="Requirements" />
 
 
 
-<br />
 Installation<a name="Installation" />
 ---
 
@@ -370,20 +350,18 @@ include the jar file&#040;s&#041; into your project. That was it :smile: .
 
 
 
-<br />
 Documentation<a name="Documentation" />
 ---
 
 In general `Lib-Tile` and `Lib-Tile-Demo` haven't an official documentation. But 
 you can
 * read the `README.md` from every project and
-* read the [JavaDoc] in the project and libraries.
+* read the [JavaDoc] in the project and sub-libraries.
 
 where `examples` and the `api` are shown and explained.
 
 
 
-<br />
 Contribution<a name="Contribution" />
 ---
 
@@ -392,7 +370,6 @@ Contribution<a name="Contribution" />
 
 
 
-<br />
 License<a name="License" />
 ---
 
@@ -400,7 +377,6 @@ The project `Lib-Tile` and all sub-projects are licensed under [General Public L
 
 
 
-<br />
 Autor<a name="Autor" />
 ---
 
@@ -408,7 +384,6 @@ The project `Lib-Tile` and all sub-projects are maintained by me, Peter Rogge. S
 
 
 
-<br />
 Contact<a name="Contact" />
 ---
 
