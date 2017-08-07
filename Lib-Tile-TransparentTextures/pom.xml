@@ -48,11 +48,6 @@ The tile images from this tileset are outsourced in a own library Lib-Tile-Trans
             <artifactId>lib-tile-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>lib-tile-transparenttextures-images</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
     
 </project>

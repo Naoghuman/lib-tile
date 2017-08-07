@@ -23,7 +23,7 @@ import java.util.Optional;
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
  * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
- * <p />
+ * <p>
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
@@ -39,9 +39,9 @@ import java.util.Optional;
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements TileLoader {
+public final class TransparentTexturesTileLoader extends TileLoader {
 	
-    private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
+    private static final Optional<TransparentTexturesTileLoader> INSTANCE = Optional.of(new TransparentTexturesTileLoader());
 
     /**
      * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
@@ -49,27 +49,21 @@ public final class TransparentTexturesTileLoader implements TileLoader {
      * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
      */
     public static final TransparentTexturesTileLoader getDefault() {
-        return instance.get();
+        return INSTANCE.get();
     }
 
     private TransparentTexturesTileLoader() {
-
+        super();
     }
 
     @Override
-    public String getPrefix() {
-        return "tt-"; // NOI18N
+    protected void configurePrefixes() {
+        super.addPrefix("tt-"); // NOI18N
     }
 
     @Override
-    public boolean isSupported(final Tile tile) {
-        final String name = tile.getImageName();
-        final boolean isSupported = 
-                (name != null)
-                && (!name.trim().isEmpty())
-                && (name.startsWith(this.getPrefix()));
-
-        return isSupported;
+    protected void configureScope() {
+        super.setScope(this.getClass().getPackage().getName());
     }
 
 }
