@@ -26,64 +26,83 @@ package com.github.naoghuman.lib.tile.core;
  * @see javafx.scene.image.Image
  */
 public interface Tile {
+    
+    /**
+     * Returned the {@code prefix} from this {@code Tile} which is per definition 
+     * the first signs until first minus (included).
+     * 
+     * @return the prefix from this {@code Tile}.
+     */
+    public default String getPrefix() {
+        return this.getImageName().substring(0, this.getImageName().indexOf("-") + 1); // NOI18N
+    }
 
     /**
-     * The autor is the creator from the <code>Tile</code>.
-     * <p />
+     * The autor is the creator from this <code>Tile</code>.
+     * <p>
      * This parameter is optional. If this parameter is NULL or empty then the
      * parameter <code>autorUrl</code> shouldn't be evaluated for the display in 
      * the gui.
      *
-     * @return the autor from the <code>Tile</code>.
+     * @return the autor from this <code>Tile</code>.
      * @see #getAutorUrl()
      */
     public String getAutor();
 
     /**
-     * The autor url from the <code>Tile</code>.
-     * <p />
+     * The autor url from this <code>Tile</code>.
+     * <p>
      * This parameter is optional. If the parameter <code>autor</code> is NULL
      * or EMPTY then this parameter shouldn't be evaluated for the display in 
      * the gui.
      *
-     * @return the autor url from the <code>Tile</code>.
+     * @return the autor url from this <code>Tile</code>.
      * @see #getAutor()
      */
     public String getAutorUrl();
 
     /**
-     * The height from a single <code>Tile</code> image.
-     * <p />
+     * The height from this <code>Tile</code> image.
+     * <p>
      * This parameter can't be <= 0.0d.
      *
-     * @return the height from a single <code>Tile</code> image.
+     * @return the height from this <code>Tile</code> image.
      */
     public double getHeight();
 
     /**
-     * The image name from the <code>Tile</code>.
-     * <p />
+     * The image name from this <code>Tile</code>.
+     * <p>
      * This parameter can't be NULL or EMPTY.
      *
-     * @return the image name from the <code>Tile</code>.
+     * @return the image name from this <code>Tile</code>.
      */
     public String getImageName();
+    
+    /**
+     * The scope from this {@code Tile}.
+     * <p>
+     * This parameter can't be NULL or EMPTY.
+     * 
+     * @return the scope from this {@code Tile}.
+     */
+    public String getScope();
 
     /**
-     * The title from the <code>Tile</code>.
-     * <p />
+     * The title from this <code>Tile</code>.
+     * <p>
      * This parameter can't be NULL or EMPTY.
      *
-     * @return the title from the <code>Tile</code>.
+     * @return the title from this <code>Tile</code>.
      */
     public String getTitle();
 
     /**
-     * The width from a single <code>Tile</code> image.
-     * <p />
+     * The width from this <code>Tile</code> image.
+     * <p>
      * This parameter can't be <= 0.0d.
      *
-     * @return the width from a single <code>Tile</code> image.
+     * @return the width from this <code>Tile</code> image.
      */
     public double getWidth();
 

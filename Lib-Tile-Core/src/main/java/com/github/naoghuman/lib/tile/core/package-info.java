@@ -16,7 +16,7 @@
  */
 
 /**
- * This package contains the <code>API</code> from the library <code>Lib-Core</code>.
+ * This package contains the <code>API</code> from the library <code>Lib-Tile-Core</code>.
  * <p />
  * With this contained <code>Classes</code> and <code>Interfaces</code> the developer 
  * can load a {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition 

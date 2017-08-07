@@ -29,4 +29,4 @@
  * @see com.github.naoghuman.lib.tile.core.TileValidator
  * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  */
-package com.github.naoghuman.lib.tile.core.internal;
+package com.github.naoghuman.lib.tile.internal;

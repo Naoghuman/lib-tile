@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.naoghuman.lib.tile.core.internal;
+package com.github.naoghuman.lib.tile.internal;
 
 import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileProvider;
@@ -31,10 +31,12 @@ public class DefaultTile implements Tile {
     private final String autor;
     private final String autorUrl;
     private final String imageName;
+    private final String scope;
     private final String title;
     
     /**
      *
+     * @param scope
      * @param imageName
      * @param title
      * @param width
@@ -42,15 +44,15 @@ public class DefaultTile implements Tile {
      * @param autor
      */
     public DefaultTile(
-            final String imageName, final String title,
-            final double width, final double height,
-            final String autor
+            final String scope, final String imageName, final String title,
+            final double width, final double height,    final String autor
     ) {
-        this(imageName, title, width, height, autor, ""); // NOI18N
+        this(scope, imageName, title, width, height, autor, ""); // NOI18N
     }
 
     /**
      *
+     * @param scope
      * @param imageName
      * @param title
      * @param width
@@ -59,10 +61,13 @@ public class DefaultTile implements Tile {
      * @param autorUrl
      */
     public DefaultTile(
-            final String imageName, final String title,
-            final double width, final double height,
-            final String autor, final String autorUrl
+            final String scope, final String imageName, final String title,
+            final double width, final double height,    final String autor, 
+            final String autorUrl
     ) {
+        TileProvider.getDefault().getDefaultTileValidator().validate(scope);
+        this.scope = scope;
+        
         TileProvider.getDefault().getDefaultTileValidator().validate(imageName);
         this.imageName = imageName;
         
@@ -75,7 +80,10 @@ public class DefaultTile implements Tile {
         TileProvider.getDefault().getDefaultTileValidator().validate(height);
         this.height = height;
         
+        TileProvider.getDefault().getDefaultTileValidator().validateIsNotNull(autorUrl);
         this.autor = autor;
+        
+        TileProvider.getDefault().getDefaultTileValidator().validateIsNotNull(autorUrl);
         this.autorUrl = autorUrl;
     }
 
@@ -98,6 +106,11 @@ public class DefaultTile implements Tile {
     public String getImageName() {
         return imageName;
     }
+    
+    @Override
+    public String getScope() {
+        return scope;
+    }
 
     @Override
     public String getTitle() {
@@ -113,23 +126,19 @@ public class DefaultTile implements Tile {
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("Tile ["); // NOI18N
-        sb.append("imageName=").append(this.getImageName()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("title=").append(this.getTitle()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("w=").append(this.getWidth()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("h=").append(this.getHeight()); // NOI18N
-        sb.append(", "); // NOI18N
-        sb.append("autor=").append(this.getAutor()); // NOI18N
+        sb.append("scope=").append(this.getScope()); // NOI18N
+        sb.append(", imageName=").append(this.getImageName()); // NOI18N
+        sb.append(", title=").append(this.getTitle()); // NOI18N
+        sb.append(", w=").append(this.getWidth()); // NOI18N
+        sb.append(", h=").append(this.getHeight()); // NOI18N
+        sb.append(", autor=").append(this.getAutor()); // NOI18N
         
         final String autorUrl = this.getAutorUrl();
         if (
                 (autorUrl != null)
                 && (!autorUrl.isEmpty())
         ) {
-            sb.append(", "); // NOI18N
-            sb.append("autorUrl=").append(autorUrl); // NOI18N
+            sb.append(", autorUrl=").append(autorUrl); // NOI18N
         }
                 
         sb.append("]"); // NOI18N

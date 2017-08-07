@@ -17,6 +17,7 @@
 package com.github.naoghuman.lib.tile.core;
 
 import java.util.Objects;
+import javafx.collections.ObservableList;
 
 /**
  * With this <code>Interface</code> its possible to create a <code>TileValidator</code> 
@@ -35,6 +36,12 @@ import java.util.Objects;
  * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  */
 public interface TileValidator {
+    
+    public default <E> void validateIsNotEmpty(final ObservableList<E> list) throws IllegalStateException {
+        if (list.isEmpty()) {
+            throw new IllegalStateException("List can't be EMPTY"); // NOI18N
+        }
+    }
 
     /**
      * Validates if the parameter <code>value</code> isn't NULL.
@@ -42,7 +49,7 @@ public interface TileValidator {
      * @param value the parameter which should be validated.
      * @throws NullPointerException if (value == NULL).
      */
-    public default void validateIsNotNull(String value) throws NullPointerException {
+    public default void validateIsNotNull(final String value) throws NullPointerException {
         Objects.requireNonNull(value, "The value can't be NULL"); // NOI18N
     }
 
@@ -53,7 +60,7 @@ public interface TileValidator {
      * @param value the parameter which should be validated.
      * @throws IllegalArgumentException if the validation fails.
      */
-    public void validate(double value) throws IllegalArgumentException;
+    public void validate(final double value) throws IllegalArgumentException;
 
     /**
      * This method validates if the parameter <code>value</code> isn't NULL or EMPTY.
@@ -62,6 +69,6 @@ public interface TileValidator {
      * @throws NullPointerException if (value == NULL).
      * @throws IllegalArgumentException if the validation fails.
      */
-    public void validate(String value) throws NullPointerException, IllegalArgumentException;
+    public void validate(final String value) throws NullPointerException, IllegalArgumentException;
 
 }
