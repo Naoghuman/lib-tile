@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.naoghuman</groupId>
+        <artifactId>lib-tile</artifactId>
+        <version>0.2.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>lib-tile-customized-examples</artifactId>
+    <name>Lib-Tile-Customized-Examples</name>
+    <packaging>jar</packaging>
+    <inceptionYear>2016</inceptionYear>
+    <url>https://github.com/Naoghuman/lib-tile.git</url>
+    
+    <description>The library Lib-Tile-Customized-Examples contains examples how to load reduced and/or mixed predefined tilesets with own tilesets.</description>
+    
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+    
+    <developers>
+        <developer>
+            <email>peter.rogge@yahoo.de</email>
+            <id>Naoghuman</id>
+            <name>Peter Rogge</name>
+            <timezone>+1</timezone>
+            <url>https://github.com/Naoghuman/lib-tile.git</url>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+            <comments>The GNU General Public License is a free, copyleft license for software and other kinds of works.</comments>
+        </license>
+    </licenses>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lib-tile-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lib-tile-transparenttextures</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+    
+</project>

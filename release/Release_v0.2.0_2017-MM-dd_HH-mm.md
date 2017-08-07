@@ -27,6 +27,7 @@ layer.
 
 #### Feature
 #8 [Lib-Tile] Prepare libraries for Maven Central.
+#6 [Lib-Tile-Customized-Examples] Add new library Lib-Tile-Customized-Examples.
 
 
 

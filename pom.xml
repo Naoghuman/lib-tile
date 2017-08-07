@@ -126,6 +126,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                     <include>**/*.css</include>
                     <include>**/*.properties</include>
                     <include>**/*.png</include>
+                    <include>**/*.txt</include>
                 </includes>
             </resource>
             <resource>
@@ -135,6 +136,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                     <include>**/*.css</include>
                     <include>**/*.properties</include>
                     <include>**/*.png</include>
+                    <include>**/*.txt</include>
                 </includes>
             </resource>
         </resources>
