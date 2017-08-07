@@ -39,6 +39,7 @@ layer.
 #15 [project] Update the project description.
 #13 [pom] Remove the `maven-release-plugin` in the `build` section.
 #12 [Documentation] Fix output from the README in the browser.
+#7 [Lib-Tile] Update the README.
 #5 [Lib-Tile-TransparentTextures] Rename parameters in first constructor.
 #2 [pom] Remove not needed dependency to to commens-lang3.
 

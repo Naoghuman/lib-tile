@@ -16,7 +16,7 @@ background-color or -image with the help of repetitions from the image in a laye
 The current `version` is `0.1.0` from 08.14.2016.
 
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
-![different-tile-images.png][different-tile-images]
+![different-tile-images_v0.3.0.png][different-tile-images_v0.3.0]
 
 > __Hint__  
 > Normally only one [Tile] can shown simultaneously. For demonstration purpose 
@@ -57,7 +57,7 @@ The application [Lib-Tile-Demo] shows a `demonstration` how to use and handle
 the features from the libraries in the project `Lib-Tile`. 
 
 _Image:_ Default demo application  
-![demo-application-default.png][demo-application-default]
+![demo_v0.3.0.png][demo_v0.3.0]
 
 Momentary the developer have following features during the demo application:
 * Choose your own background image.
@@ -392,8 +392,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
-[different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/17412537/8fd2c446-5a7d-11e6-82b2-34aca4f5f870.png
+[demo_v0.3.0.png]:https://user-images.githubusercontent.com/8161815/29042851-02bf3cd4-7bb9-11e7-818d-28c7260c0c25.png
+[different-tile-images_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042867-12cc8c62-7bb9-11e7-8780-c6c3e68a2374.png
 
 
 
