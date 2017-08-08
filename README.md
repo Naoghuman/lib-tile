@@ -13,7 +13,7 @@ application.
 A [Tile] is per definition a little transparent [Image] which overlay a 
 background-color or -image with the help of repetitions from the image in a layer.
 
-The current `version` is `0.1.0` from 08.14.2016.
+The current `version` is `0.1.0` from 08.14.2016 (MM.dd.yyyy).
 
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 ![different-tile-images_v0.3.0.png][different-tile-images_v0.3.0]
@@ -39,6 +39,7 @@ Content
     - [Lib-Tile-Core](#LiTiCo)
     - [Lib-Tile-TransparentTextures](#LiTiTrTe)
     - [Lib-Tile-TransparentTextures-Images](#LiTiTrTeIm)
+    - [Lib-Tile-Customized-Examples](#LiTiCuEx)
 * [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
@@ -62,7 +63,7 @@ _Image:_ Default demo application
 Momentary the developer have following features during the demo application:
 * Choose your own background image.
     * Currently only images from the internet &#040;http or https&#041; with 
-      the size 1280x720 are supported.
+      the size from 1280x720 are supported.
     * For example: https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
     * In a later version I plan to implement the option to load also local images.
 * Define your own background color.
@@ -91,6 +92,9 @@ or have a look into the class [TransparentTexturesTileLoader] from the library
 Natural you can use additional libraries which contains predefined `tilesets`. 
 Currently supported is [Transparent Textures] with the libraries 
 [Lib-Tile-TransparentTextures](#LiTiTrTe) and [Lib-Tile-TransparentTextures-Images](#LiTiTrTeIm).
+
+In the library [Lib-Tile-Customized-Examples](#LiTiCuEx) different examples shows 
+how to used a reduced, mixed or own `TileSet`.
 
 
 ### Lib-Tile-Core<a name="LiTiCo" />
@@ -259,7 +263,6 @@ public enum TransparentTexturesTile implements Tile {
 }
 ```
 
-<br />
 For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures].
 
 
@@ -306,8 +309,22 @@ private static final Optional<TransparentTexturesTileLoader> instance = Optional
 public static final TransparentTexturesTileLoader getDefault()
 ```
 
-<br />
 For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures-Images].
+
+
+### Lib-Tile-Customized-Examples<a name="LiTiCuEx" />
+
+The library `Lib-Tile-Customized-Examples` provides different examples about 
+`CustomizedTileSets`. There will be following demonstrations:
+* An example which shows how to implemente a `reduced` TileSet. A reduced TileSet 
+  contains different predefined `Tiles` from an existing `TileSet` which is in this
+  example `TransparentTextures`.
+* The next example _(will be implemented in the future)_ shows an `mixed` TileSet. 
+  A mixed TileSet contains predefined and own Tiles.
+* The last example shows an `own` TileSet. Like `own` means this example contains 
+  only own Tiles.
+
+For more informations and examples plz see the [ReadMe from Lib-Tile-Customized-Examples].
 
 
 
@@ -416,6 +433,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [ReadMe from Lib-Tile-Core]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core
+[ReadMe from Lib-Tile-Customized-Examples]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-Customized-Examples
 [ReadMe from Lib-Tile-Demo]:https://github.com/Naoghuman/lib-tile-demo/blob/master/README.md
 [ReadMe from Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures
 [ReadMe from Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images
