@@ -57,20 +57,13 @@ Demo<a name="Demo" />
 The application [Lib-Tile-Demo] shows a `demonstration` how to use and handle 
 the features from the libraries in the project `Lib-Tile`. 
 
-_Image:_ Default demo application  
+_Image:_ Demo application  
 ![demo_v0.3.0.png][demo_v0.3.0]
 
-Momentary the developer have following features during the demo application:
-* Choose your own background image.
-    * Currently only images from the internet &#040;http or https&#041; with 
-      the size from 1280x720 are supported.
-    * For example: https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
-    * In a later version I plan to implement the option to load also local images.
-* Define your own background color.
-    * Currently only single colors are supported.
-    * For a later version I planed the option to define a [LinearGradient] or a 
-      [RadialGradient] colors through `css` &#040;[JavaFX CSS Reference Guide]&#041;.
-* Browse through all [Tile]s from the tileset `Transparent Textures`.
+> __Hint__  
+> The library [Lib-Tile-Customized-Examples](#LiTiCuEx) provides different examples 
+> about `reduced`, `mixed` and `own` [TileSet]s. This examples are shown in the 
+> tab `Customized Tiles`.
 
 For more informations and examples plz see the [ReadMe from Lib-Tile-Demo].
 
@@ -441,6 +434,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileLoader.java
 [TileProvider]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileProvider.java
+[TileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileSet.java
 [Transparent Textures]:https://www.transparenttextures.com/
 [TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
 [TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
