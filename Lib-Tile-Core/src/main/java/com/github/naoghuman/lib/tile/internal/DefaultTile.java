@@ -18,12 +18,15 @@ package com.github.naoghuman.lib.tile.internal;
 
 import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileProvider;
+import java.util.Optional;
 
 /**
  *
  * @author Naoghuman
  */
 public class DefaultTile implements Tile {
+    
+    private static final String UNDEFINED = "[undefined]"; // NOI18N
     
     private final double height;
     private final double width;
@@ -35,30 +38,57 @@ public class DefaultTile implements Tile {
     private final String title;
     
     /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
+     * <p>
+     * The optional attributes {@code autor} and {@code autorURL} will returned 
+     * {@link java.util.Optional#empty()} in this case.
      *
-     * @param scope
-     * @param imageName
-     * @param title
-     * @param width
-     * @param height
-     * @param autor
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     */
+    public DefaultTile(
+            final String scope, final String imageName, final String title,
+            final double width, final double height
+    ) {
+        this(scope, imageName, title, width, height, UNDEFINED, UNDEFINED);
+    }
+    
+    /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
+     * <p>
+     * The optional attribute {@code autorURL} will returned 
+     * {@link java.util.Optional#empty()} in this case.
+     * 
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     * @param  autor defines the {@code autor} from the new {@code Tile}.
      */
     public DefaultTile(
             final String scope, final String imageName, final String title,
             final double width, final double height,    final String autor
     ) {
-        this(scope, imageName, title, width, height, autor, ""); // NOI18N
+        this(scope, imageName, title, width, height, autor, UNDEFINED);
     }
 
     /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
      *
-     * @param scope
-     * @param imageName
-     * @param title
-     * @param width
-     * @param height
-     * @param autor
-     * @param autorUrl
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     * @param  autor defines the {@code autor} from the new {@code Tile}.
+     * @param  autorUrl defines the {@code autorUrl} from the new {@code Tile}.
      */
     public DefaultTile(
             final String scope, final String imageName, final String title,
@@ -88,13 +118,13 @@ public class DefaultTile implements Tile {
     }
 
     @Override
-    public String getAutor() {
-        return autor;
+    public Optional<String> getAutor() {
+        return autor.equals(UNDEFINED) ? Optional.ofNullable(autor) : Optional.empty();
     }
 
     @Override
-    public String getAutorUrl() {
-        return autorUrl;
+    public Optional<String> getAutorUrl() {
+        return autorUrl.equals(UNDEFINED) ? Optional.ofNullable(autorUrl) : Optional.empty();
     }
 
     @Override
@@ -131,14 +161,15 @@ public class DefaultTile implements Tile {
         sb.append(", title=").append(this.getTitle()); // NOI18N
         sb.append(", w=").append(this.getWidth()); // NOI18N
         sb.append(", h=").append(this.getHeight()); // NOI18N
-        sb.append(", autor=").append(this.getAutor()); // NOI18N
         
-        final String autorUrl = this.getAutorUrl();
-        if (
-                (autorUrl != null)
-                && (!autorUrl.isEmpty())
-        ) {
-            sb.append(", autorUrl=").append(autorUrl); // NOI18N
+        final Optional<String> optionalAutor = this.getAutor();
+        if (optionalAutor.isPresent() && !optionalAutor.get().equals(UNDEFINED)) {
+            sb.append(", autor=").append(optionalAutor.get()); // NOI18N
+        }
+        
+        final Optional<String> optionalAutorUrl = this.getAutorUrl();
+        if (optionalAutorUrl.isPresent() && !optionalAutorUrl.get().equals(UNDEFINED)) {
+            sb.append(", autorUrl=").append(optionalAutorUrl.get()); // NOI18N
         }
                 
         sb.append("]"); // NOI18N

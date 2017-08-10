@@ -16,6 +16,8 @@
  */
 package com.github.naoghuman.lib.tile.core;
 
+import java.util.Optional;
+
 /**
  * A <code>Tile</code> is per definition a little transparent
  * {@link javafx.scene.image.Image} which overlay a background color or an
@@ -38,28 +40,28 @@ public interface Tile {
     }
 
     /**
-     * The autor is the creator from this <code>Tile</code>.
+     * The autor is the creator from this {@code Tile}.
      * <p>
-     * This parameter is optional. If this parameter is NULL or empty then the
-     * parameter <code>autorUrl</code> shouldn't be evaluated for the display in 
-     * the gui.
+     * This parameter is optional. If this parameter is {@code NULL} or {@code EMPTY} 
+     * then this {@code Getter} return  {@link java.util.Optional#empty()}.
      *
-     * @return the autor from this <code>Tile</code>.
-     * @see #getAutorUrl()
+     * @return the autor from this {@code Tile}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile#getAutorUrl()
+     * @see    java.util.Optional
      */
-    public String getAutor();
+    public Optional<String> getAutor();
 
     /**
-     * The autor url from this <code>Tile</code>.
+     * The autor url from this {@code Tile}.
      * <p>
-     * This parameter is optional. If the parameter <code>autor</code> is NULL
-     * or EMPTY then this parameter shouldn't be evaluated for the display in 
-     * the gui.
+     * This parameter is optional. If the parameter {@code autor} is {@code NULL}
+     * or {@code EMPTY} then this {@code Getter} return {@link java.util.Optional#empty()}.
      *
-     * @return the autor url from this <code>Tile</code>.
-     * @see #getAutor()
+     * @return the autor url from this {@code Tile}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile#getAutor()
+     * @see    java.util.Optional
      */
-    public String getAutorUrl();
+    public Optional<String> getAutorUrl();
 
     /**
      * The height from this <code>Tile</code> image.

@@ -60,14 +60,42 @@ public final class TileProvider {
     }
     
     /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
+     * <p>
+     * The optional attributes {@code autor} and {@code autorURL} will returned 
+     * {@link java.util.Optional#empty()} in this case.
      * 
-     * @param scope
-     * @param imageName
-     * @param title
-     * @param width
-     * @param height
-     * @param autor
-     * @return 
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     * @return a new {@code Tile} with the specified values.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     */
+    public Tile getDefaultTile(
+            final String scope, final String imageName, final String title,
+            final double width, final double height
+    ) {
+        return new DefaultTile(scope, imageName, title, width, height);
+    }
+    
+    /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
+     * <p>
+     * The optional attribute {@code autorURL} will returned 
+     * {@link java.util.Optional#empty()} in this case.
+     * 
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     * @param  autor defines the {@code autor} from the new {@code Tile}.
+     * @return a new {@code Tile} with the specified values.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
      */
     public Tile getDefaultTile(
             final String scope, final String imageName, final String title,
@@ -77,15 +105,18 @@ public final class TileProvider {
     }
     
     /**
+     * Creates a new instance from {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the defined values.
      * 
-     * @param scope
-     * @param imageName
-     * @param title
-     * @param width
-     * @param height
-     * @param autor
-     * @param autorUrl
-     * @return 
+     * @param  scope defines the {@code scope} from the new {@code Tile}.
+     * @param  imageName defines the {@code imageName} from the new {@code Tile}.
+     * @param  title defines the {@code title} from the new {@code Tile}.
+     * @param  width defines the {@code width} from the new {@code Tile}.
+     * @param  height defines the {@code height} from the new {@code Tile}.
+     * @param  autor defines the {@code autor} from the new {@code Tile}.
+     * @param  autorUrl defines the {@code autorUrl} from the new {@code Tile}.
+     * @return a new {@code Tile} with the specified values.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
      */
     public Tile getDefaultTile(
             final String scope,  final String imageName, final String title,
