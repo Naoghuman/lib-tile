@@ -30,24 +30,27 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 
 /**
- * The singleton <code>TileProvider</code> allowed the developer to load a
- * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
- * little transparent Image) as a {@link javafx.scene.layout.Background} or an
- * {@link javafx.scene.image.Image} with a concrete implementation from an
- * {@link com.github.naoghuman.lib.tile.core.TileLoader}.
+ * The singleton {@code TileProvider} allowed the developer access to all relevant 
+ * methods in context from the {@code API} from the library {@code Lib-Tile-Core}.
+ * <p>
+ * For example with the methods {@code getDefaultTile(XY)} a concrete instance from 
+ * the {@code Inteface} {@link com.github.naoghuman.lib.tile.core.Tile} can be created.
+ * <br>
+ * With the method {@code getDefaultValidator()} the developer have access to a 
+ * default implementation from the {@code Inteface} 
+ * {@link com.github.naoghuman.lib.tile.core.TileValidator}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileLoader
- * @see com.github.naoghuman.lib.tile.core.Tile
- * @see javafx.scene.layout.Background
- * @see javafx.scene.image.Image
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.Tile
+ * @see    com.github.naoghuman.lib.tile.core.TileValidator
  */
 public final class TileProvider {
 
     private static final Optional<TileProvider> instance = Optional.of(new TileProvider());
 
     /**
-     * Returns a singleton instance from the class <code>TileProvider</code>.
+     * Returns a singleton instance from the class {@code TileProvider}.
      *
      * @return a singleton instance from this class.
      */
@@ -73,6 +76,7 @@ public final class TileProvider {
      * @param  height defines the {@code height} from the new {@code Tile}.
      * @return a new {@code Tile} with the specified values.
      * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    java.util.Optional#empty()
      */
     public Tile getDefaultTile(
             final String scope, final String imageName, final String title,
@@ -96,6 +100,7 @@ public final class TileProvider {
      * @param  autor defines the {@code autor} from the new {@code Tile}.
      * @return a new {@code Tile} with the specified values.
      * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    java.util.Optional#empty()
      */
     public Tile getDefaultTile(
             final String scope, final String imageName, final String title,
@@ -127,17 +132,19 @@ public final class TileProvider {
     }
 
     /**
-     * This method returns a concrete implementation from the <code>Interface</code> 
-     * {@link com.github.naoghuman.lib.tile.core.TileValidator} which can be used 
-     * to validate for example if a {@link java.lang.Double} is greater then
-     * 0.0d or if a {@link java.lang.String} isn't NULL or EMPTY.
+     * This method returns a concrete implementation from the {@code Interface} 
+     * {@link com.github.naoghuman.lib.tile.core.TileValidator}.
+     * <p>
+     * The validator can then be used to validate for example if a {@link java.lang.Double} 
+     * is greater then {@code 0.0d} or if a {@link java.lang.String} isn't {@code NULL} or 
+     * {@code EMPTY}.
      *
-     * @return a concrete implementation from the <code>Interface</code>
-     * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator}.
-     * @see com.github.naoghuman.lib.tile.core.TileValidator
-     * @see com.github.naoghuman.lib.tile.internal.DefaultTileValidator
+     * @return a concrete implementation from the {@code Interface}
+     *         {@link com.github.naoghuman.lib.tile.core.validator.TileValidator}.
+     * @see    com.github.naoghuman.lib.tile.core.TileValidator
+     * @see    com.github.naoghuman.lib.tile.internal.DefaultTileValidator
      */
-    public TileValidator getDefaultTileValidator() {
+    public TileValidator getDefaultValidator() {
         return DefaultTileValidator.getDefault();
     }
 
@@ -146,32 +153,21 @@ public final class TileProvider {
      * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
      * {@link javafx.scene.image.Image} which will be converted to a
      * {@link javafx.scene.layout.Background}.
-     * <p>
-     * Internal the parameter from the <code>Tile</code> will be checked with 
-     * the {@link com.github.naoghuman.lib.tile.internal.DefaultTileValidator} 
-     * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
-     * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
-     * <p>
-     * Following parameters in the <code>Tile</code> will be checked by default:
-     * <ul>
-     * <li>imageName, title, width, height</li>
-     * </ul>
      * 
-     * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
-     * as an {@link javafx.scene.image.Image} which will then be converted to a
-     * {@link javafx.scene.layout.Background}.
-     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be loaded as a {@link javafx.scene.layout.Background}.
+     * @param  tileLoader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
+     *         as an {@link javafx.scene.image.Image} which will then be converted to a 
+     *         {@link javafx.scene.layout.Background}.
+     * @param  tile the {@link com.github.naoghuman.lib.tile.core.Tile} which should be 
+     *         loaded as a {@link javafx.scene.layout.Background}.
      * @return the loaded {@link javafx.scene.layout.Background}.
-     * @see com.github.naoghuman.lib.tile.core.TileLoader
-     * @see com.github.naoghuman.lib.tile.core.Tile
-     * @see com.github.naoghuman.lib.tile.internal.DefaultTileValidator
-     * @see javafx.scene.layout.Background
-     * @see javafx.scene.image.Image
+     * @see    com.github.naoghuman.lib.tile.core.TileLoader
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    javafx.scene.layout.Background
+     * @see    javafx.scene.image.Image
      */
-    public Optional<Background> loadAsBackground(final TileLoader loader, final Tile tile) {
+    public Optional<Background> loadAsBackground(final TileLoader tileLoader, final Tile tile) {
         Optional<Background> background = Optional.empty();
-        final Optional<Image> image = TileProvider.getDefault().loadAsImage(loader, tile);
+        final Optional<Image> image = TileProvider.getDefault().loadAsImage(tileLoader, tile);
         if (image.isPresent()) {
             final BackgroundSize backgroundSize = new BackgroundSize(
                     tile.getWidth(), tile.getHeight(),
@@ -187,27 +183,18 @@ public final class TileProvider {
 
     /**
      * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
-     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an {@link javafx.scene.image.Image}.
-     * <p>
-     * Internal the parameter from the <code>Tile</code> will be checked with 
-     * the {@link com.github.naoghuman.lib.tile.internal.DefaultTileValidator} 
-     * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
-     * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
-     * <p>
-     * Following parameters in the <code>Tile</code> will be checked by default:
-     * <ul>
-     * <li>imageName, title, width, height</li>
-     * </ul>
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an 
+     * {@link javafx.scene.image.Image}.
      *
-     * @param tileLoader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
-     * as an {@link javafx.scene.image.Image}.
-     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
-     * should be loaded as an {@link javafx.scene.image.Image}.
+     * @param  tileLoader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
+     *         as an {@link javafx.scene.image.Image}.
+     * @param  tile the {@link com.github.naoghuman.lib.tile.core.Tile} which should be 
+     *         loaded as an {@link javafx.scene.image.Image}.
      * @return the loaded {@link javafx.scene.image.Image}.
-     * @see com.github.naoghuman.lib.tile.core.TileLoader
-     * @see com.github.naoghuman.lib.tile.core.Tile
-     * @see com.github.naoghuman.lib.tile.internal.DefaultTileValidator
-     * @see javafx.scene.image.Image
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    com.github.naoghuman.lib.tile.core.TileLoader
+     * @see    com.github.naoghuman.lib.tile.core.TileValidator
+     * @see    javafx.scene.image.Image
      */
     public Optional<Image> loadAsImage(final TileLoader tileLoader, final Tile tile) {
         if (!tileLoader.supports(tile)) {
@@ -219,28 +206,15 @@ public final class TileProvider {
         Optional<Image> image = Optional.empty();
         try {
             final String imageName = tile.getImageName();
-            this.getDefaultTileValidator().validate(imageName);
+            final URI uri = tileLoader.getClass().getResource(imageName).toURI();
             
-            final String title = tile.getTitle();
-            this.getDefaultTileValidator().validate(title);
-
             final double width = tile.getWidth();
-            this.getDefaultTileValidator().validate(width);
-            
             final double height = tile.getHeight();
-            this.getDefaultTileValidator().validate(height);
-            
-            try {
-                final URI uri = tileLoader.getClass().getResource(imageName).toURI();
-                image = Optional.ofNullable(new Image(uri.toString(), width, height, true, true));
-            } catch (Exception ex) {
-                Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
-                        "Can't load Tile image [" + tile.toString()+ "]\n" // NOI18N
-                                + "with TileLoader [" + tileLoader.toString() + "]", ex); // NOI18N
-            }
-        } catch (NullPointerException | IllegalArgumentException ex) {
+            image = Optional.ofNullable(new Image(uri.toString(), width, height, true, true));
+        } catch (Exception ex) {
             Logger.getLogger(TileProvider.class.getName()).log(Level.SEVERE,
-                    "Given Tile [" + tile.toString() + "] isn't valid!", ex);
+                    "Can't load Tile image [" + tile.toString()+ "]\n" // NOI18N
+                            + "with TileLoader [" + tileLoader.toString() + "]", ex); // NOI18N
         }
 
         return image;

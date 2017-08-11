@@ -20,24 +20,23 @@ import com.github.naoghuman.lib.tile.core.TileValidator;
 import java.util.Optional;
 
 /**
- * A concrete implementation from the <code>Interface</code>
- * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator} which can
- * be used to validate a) is a {@link java.lang.Double} greater then 0.0d or b)
- * if a {@link java.lang.String} isn't NULL or EMPTY.
- * <p />
- * The class can be accessed over
- * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}.
+ * A concrete implementation from the {@code Interface}
+ * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator}.
+ * <p>
+ * The acces over {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}
+ * is preferred instead the directly instanziation from this class.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
- * @see com.github.naoghuman.lib.tile.core.TileValidator
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
+ * @see    com.github.naoghuman.lib.tile.core.TileValidator
  */
 public final class DefaultTileValidator implements TileValidator {
 
     private static final Optional<DefaultTileValidator> instance = Optional.of(new DefaultTileValidator());
 
     /**
-     * Returns a singleton instance from the class <code>DefaultTileValidator</code>.
+     * Returns a singleton instance from the class {@code DefaultTileValidator}.
      *
      * @return a singleton instance from this class.
      */
@@ -52,16 +51,7 @@ public final class DefaultTileValidator implements TileValidator {
     @Override
     public void validate(double value) throws IllegalArgumentException {
         if (value <= 0.0d) {
-            throw new IllegalArgumentException("Parameter can't <= 0.0d"); // NOI18N
-        }
-    }
-
-    @Override
-    public final void validate(String value) throws NullPointerException, IllegalArgumentException {
-        TileValidator.super.validateIsNotNull(value);
-
-        if (value.trim().isEmpty()) {
-            throw new IllegalArgumentException("The value can't be EMPTY"); // NOI18N
+            throw new IllegalArgumentException("The value can't <= 0.0d"); // NOI18N
         }
     }
 

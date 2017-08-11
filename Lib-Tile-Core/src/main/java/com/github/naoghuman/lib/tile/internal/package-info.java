@@ -16,16 +16,17 @@
  */
 
 /**
- * This package contains the internal implementation from the library <code>Lib-Core</code>.
- * <p />
- * The classes into this packages shouldn't be used directly from the developer.
+ * This package contains the internal {@code Implementation} from the library 
+ * {@code Lib-Tile-Core}.
+ * <p>
+ * The classes in this packages shouldn't be used directly from the developer.
  * For example the class {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}
- * which is a concrete implementation from the <code>Interface</code> 
+ * which is a concrete implementation from the {@code Interface}
  * {@link com.github.naoghuman.lib.tile.core.TileValidator} can be accessed over 
- * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}.
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultValidator()}.
  * 
  * @see com.github.naoghuman.lib.tile.core.Tile
- * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
+ * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultValidator()
  * @see com.github.naoghuman.lib.tile.core.TileValidator
  * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  */

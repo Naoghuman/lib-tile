@@ -20,55 +20,55 @@ import java.util.Objects;
 import javafx.collections.ObservableList;
 
 /**
- * With this <code>Interface</code> its possible to create a <code>TileValidator</code> 
- * which can be used to validate a {@link java.lang.Double} or a {@link java.lang.String} 
- * against still to be defined rules.
- * <p />
- * A concrete implementation from this <code>Interface</code> can be found in
- * the class {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}
- * which validates if a) is a {@link java.lang.Double} greater then 0.0d or b)
- * if a {@link java.lang.String} isn't NULL or EMPTY. The class <code>DefaultTileValidator</code> 
- * can be accessed over {@link com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()}
- * if needed.
+ * The {@code Interface} {@code TileValidator} defines different {@code validate()} 
+ * methods which can be used to validate a {@link java.lang.Double} or a 
+ * {@link java.lang.String} against still to be defined rules.
+ * <p>
+ * A concrete implementation from this {@code Interface} can be access over
+ * the class {@link com.github.naoghuman.lib.tile.core.TileProvider}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileProvider#getDefaultTileValidator()
- * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.TileProvider#getDefaultValidator()
  */
 public interface TileValidator {
+
+    /**
+     * This method validates if the attribute {@code value} is valid against
+     * still to be defined rules.
+     *
+     * @param value the attribute which should be validated.
+     * @throws IllegalArgumentException if the validation fails.
+     */
+    public void validate(final double value) throws IllegalArgumentException;
     
-    public default <E> void validateIsNotEmpty(final ObservableList<E> list) throws IllegalStateException {
+    /**
+     * Validates if the attribute {@code list} isn't {@code NULL} or {@code EMPTY}.
+     * 
+     * @param <E>  the type of {@code Object}s from this list.
+     * @param list the attribute which should be validated.
+     */
+    public default <E> void validate(final ObservableList<E> list) throws NullPointerException, IllegalStateException {
+        Objects.requireNonNull(list, "The list can't be NULL."); // NOI18N
+        
         if (list.isEmpty()) {
-            throw new IllegalStateException("List can't be EMPTY"); // NOI18N
+            throw new IllegalStateException("The list can't be EMPTY."); // NOI18N
         }
     }
 
     /**
-     * Validates if the parameter <code>value</code> isn't NULL.
+     * This method validates if the attribute {@code value} isn't {@code NULL} 
+     * or {@code EMPTY}.
      *
-     * @param value the parameter which should be validated.
-     * @throws NullPointerException if (value == NULL).
+     * @param value the attribute which should be validated.
+     * @throws NullPointerException if the value is {@code NULL}.
+     * @throws IllegalArgumentException if the value is {@code EMPTY}.
      */
-    public default void validateIsNotNull(final String value) throws NullPointerException {
-        Objects.requireNonNull(value, "The value can't be NULL"); // NOI18N
+    public default void validate(final String value) throws NullPointerException, IllegalArgumentException {
+        Objects.requireNonNull(value, "The value can't be NULL."); // NOI18N
+
+        if (value.trim().isEmpty()) {
+            throw new IllegalArgumentException("The value can't be EMPTY"); // NOI18N
+        }
     }
-
-    /**
-     * This method validates if the parameter <code>value</code> valid against
-     * still to be defined rules.
-     *
-     * @param value the parameter which should be validated.
-     * @throws IllegalArgumentException if the validation fails.
-     */
-    public void validate(final double value) throws IllegalArgumentException;
-
-    /**
-     * This method validates if the parameter <code>value</code> isn't NULL or EMPTY.
-     *
-     * @param value the parameter which should be validated.
-     * @throws NullPointerException if (value == NULL).
-     * @throws IllegalArgumentException if the validation fails.
-     */
-    public void validate(final String value) throws NullPointerException, IllegalArgumentException;
-
 }
