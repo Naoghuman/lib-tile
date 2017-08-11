@@ -21,8 +21,17 @@ import com.github.naoghuman.lib.tile.core.TileProvider;
 import java.util.Optional;
 
 /**
+ * The default {@code Implementation} from the {@code Interface} 
+ * {@link com.github.naoghuman.lib.tile.core.Tile}.
+ * <p>
+ * An instance from this class can be easily throw the class 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider} generated which 
+ * is the preferred way.
  *
  * @author Naoghuman
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.Tile
+ * @see    com.github.naoghuman.lib.tile.core.TileProvider
  */
 public class DefaultTile implements Tile {
     
@@ -49,6 +58,8 @@ public class DefaultTile implements Tile {
      * @param  title defines the {@code title} from the new {@code Tile}.
      * @param  width defines the {@code width} from the new {@code Tile}.
      * @param  height defines the {@code height} from the new {@code Tile}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    java.util.Optional#empty()
      */
     public DefaultTile(
             final String scope, final String imageName, final String title,
@@ -70,6 +81,8 @@ public class DefaultTile implements Tile {
      * @param  width defines the {@code width} from the new {@code Tile}.
      * @param  height defines the {@code height} from the new {@code Tile}.
      * @param  autor defines the {@code autor} from the new {@code Tile}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    java.util.Optional#empty()
      */
     public DefaultTile(
             final String scope, final String imageName, final String title,
@@ -89,31 +102,32 @@ public class DefaultTile implements Tile {
      * @param  height defines the {@code height} from the new {@code Tile}.
      * @param  autor defines the {@code autor} from the new {@code Tile}.
      * @param  autorUrl defines the {@code autorUrl} from the new {@code Tile}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
      */
     public DefaultTile(
             final String scope, final String imageName, final String title,
             final double width, final double height,    final String autor, 
             final String autorUrl
     ) {
-        TileProvider.getDefault().getDefaultTileValidator().validate(scope);
+        TileProvider.getDefault().getDefaultValidator().validate(scope);
         this.scope = scope;
         
-        TileProvider.getDefault().getDefaultTileValidator().validate(imageName);
+        TileProvider.getDefault().getDefaultValidator().validate(imageName);
         this.imageName = imageName;
         
-        TileProvider.getDefault().getDefaultTileValidator().validate(title);
+        TileProvider.getDefault().getDefaultValidator().validate(title);
         this.title = title;
         
-        TileProvider.getDefault().getDefaultTileValidator().validate(width);
+        TileProvider.getDefault().getDefaultValidator().validate(width);
         this.width = width;
         
-        TileProvider.getDefault().getDefaultTileValidator().validate(height);
+        TileProvider.getDefault().getDefaultValidator().validate(height);
         this.height = height;
         
-        TileProvider.getDefault().getDefaultTileValidator().validateIsNotNull(autorUrl);
+        TileProvider.getDefault().getDefaultValidator().validate(autorUrl);
         this.autor = autor;
         
-        TileProvider.getDefault().getDefaultTileValidator().validateIsNotNull(autorUrl);
+        TileProvider.getDefault().getDefaultValidator().validate(autorUrl);
         this.autorUrl = autorUrl;
     }
 

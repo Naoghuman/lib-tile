@@ -21,54 +21,36 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * TileSet
- *  - enthaelt eine List<Tile>
- *  - enthaelt eine List<TileLoader>
- * 
- *  - TileLoader ermoeglicht das laden von Tile
- *  - fuer das laden eines Tile über einen TileLoader ist es notwendig, dass
- *    der TileLoader das Tile supported(prefix)
- *  - der TileToader sollte ABER auch verantwortlich sein fuer das Tile
- *  - TODO d.h. die Bilder der Tile welche ueber den TileLoader geladen werden sollen
- *    fuer den TileLoader verfuegbar sein
- * 
- *  - wie wird der prefix gemanagt?
- *     - Tile(-Bilder) haben
- *        a) einen oder mehrere prefixe
- *        b) die dazugehoerenden bildernamen
- *     - TileLoader verifizieren (validate {NEU TileValidator}) das sie verantwortlich
- *       sind, dass sie das Tile laden können
- *        a) prefix ist okay
- *        b) TileLoader kann definierte Bilder erreichen
- *        c) ist verantwortlich fuer das tile (tile ist registiert bei dem lader,
- *           bedeutet das bild ist fuer den TileLoader erreichbar)
- * 
- *  - COC (convention over configuration)
- *     - Tile have min one Prefix
- *     - TileLoader have min one Prefix.
- *        - The Prefixes from the TileLoader(s) reflected the Prefixes from the Tile(s).
- *        - The package from the TileLoader defines the responsible area from the loader.
- *           - That means the images are in the same package like the TileLoader (but can be
- *             in other libraries).
- *           - Or with other words only the images in the same package like the TileLoader 
- *             can be loaded from it.
- *     - other possiblility is that the TileSet generate a Id, adding a Tile or TileLoader
- *       adds also the TileSetId to the Tile and TileLoader.
- *        - So I know which is responsible...
- *  - new method: 
- *     - TileSet.getTileLoader(Tile): Optional<TileLoader>
- *        - Searchs in all TileLoaders and returned the first TileLoader which supports 
- *          the Tiles Prefix.
- *     - TileSet.checkConfiguration(): void
- *        - At last after the initialization must be at minimum one TileLoader and one Tile.
- * 
+ * This {@code abstract} class defines the minimal functionalities which should 
+ * be supported by a {@code TileSet}.
+ * <p>
+ * Simple said a {@code TileSet} is a container which contains a set of 
+ * {@link com.github.naoghuman.lib.tile.core.Tile}s and their corresponding 
+ * {@link com.github.naoghuman.lib.tile.core.TileLoader}s.
+ * <p>
+ * A {@code TileLoader} supports a {@code Tile} if
+ * <ul>
+ * <li>the {@code prefix} from the {@code Tile} is supported by the {@code TileLoader} and</li>
+ * <li>the {@code scope} from both are equals</li>
+ * </ul>
+ *
  * @author Naoghuman
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.Tile
+ * @see    com.github.naoghuman.lib.tile.core.Tile#getPrefix()
+ * @see    com.github.naoghuman.lib.tile.core.Tile#getScope()
+ * @see    com.github.naoghuman.lib.tile.core.TileLoader
+ * @see    com.github.naoghuman.lib.tile.core.TileLoader#getPrefixes()
+ * @see    com.github.naoghuman.lib.tile.core.TileLoader#getScope()
  */
 public abstract class TileSet {
     
     private final ObservableList<Tile>       tiles       = FXCollections.observableArrayList();
     private final ObservableList<TileLoader> tileLoaders = FXCollections.observableArrayList();
     
+    /**
+     * Protected constructor from the abstract class {@code TileSet}.
+     */
     protected TileSet() {
         this.initialize();
     }
@@ -77,69 +59,127 @@ public abstract class TileSet {
         this.configureTileLoaders();
         this.configureTiles();
         
-        this.validateConfiguration();
+        this.validate();
     }
     
+    /**
+     * With this method a developer can add a {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * to the supported list of {@code Tile}s in a concrete implementation from this abstract 
+     * class.
+     * <p>
+     * This method should be normally used in the abstract method 
+     * {@link com.github.naoghuman.lib.tile.core.TileSet#configureTiles()}.
+     *
+     * @param tile which should be added to the supported list of {@code Tile}s.
+     * @see   com.github.naoghuman.lib.tile.core.Tile
+     * @see   com.github.naoghuman.lib.tile.core.TileSet#configureTiles()
+     */
     public void addTile(final Tile tile) {
         tiles.add(tile);
     }
-    
+
+    /**
+     * With this method a developer can add a {@link com.github.naoghuman.lib.tile.core.TileLoader} 
+     * to the supported list of {@code TileLoader}s in a concrete implementation from this abstract 
+     * class.
+     * <p>
+     * This method should be normally used in the abstract method 
+     * {@link com.github.naoghuman.lib.tile.core.TileSet#configureTileLoaders()}.
+     *
+     * @param tileLoader which should be added to the supported list of {@code TileLoader}s.
+     * @see   com.github.naoghuman.lib.tile.core.TileLoader
+     * @see   com.github.naoghuman.lib.tile.core.TileSet#configureTileLoaders()
+     */
     public void addTileLoader(final TileLoader tileLoader) {
         tileLoaders.add(tileLoader);
     }
-    
-    private void validateConfiguration() {
-        TileProvider.getDefault().getDefaultTileValidator().validateIsNotEmpty(tiles);
-        TileProvider.getDefault().getDefaultTileValidator().validateIsNotEmpty(tileLoaders);
-    }
         
     /**
-     * Add all TileLoaders which are responsible for loading the Tiles in this 
-     * TileSet to the collection.
+     * This abstract method allowed all child classes to defined the supported
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader}s.
+     * <p>
+     * A {@code TileLoader} can be added in this method with the method 
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader#addTileLoader(java.lang.com.github.naoghuman.lib.tile.core.TileLoader)}.
+     * 
+     * @see com.github.naoghuman.lib.tile.core.TileLoader#addTileLoader(java.lang.com.github.naoghuman.lib.tile.core.TileLoader)
      */
     protected abstract void configureTileLoaders();
     
     /**
-     * Add all Tiles from this TileSet to the collection.
+     * This abstract method allowed all child classes to defined the supported
+     * {@link com.github.naoghuman.lib.tile.core.Tile}s.
+     * <p>
+     * A {@code Tile} can be added in this method with the method 
+     * {@link com.github.naoghuman.lib.tile.core.TileLoader#addTile(java.lang.com.github.naoghuman.lib.tile.core.Tile)}.
+     * 
+     * @see com.github.naoghuman.lib.tile.core.TileLoader#addTile(java.lang.com.github.naoghuman.lib.tile.core.Tile)
      */
     protected abstract void configureTiles();
     
-    protected Optional<Tile> getTile(final String title) {
-//        Tile tile = null;
-//        for(Tile t : tiles) {
-//            if (t.getTitle().equals(title)) {
-//                tile = t;
-//                break;
-//            }
-//        }
-        // TODO convert to lambda
+    /**
+     * Search and returnes the first {@link com.github.naoghuman.lib.tile.core.Tile}
+     * with the given {@code title} wrapped in an {@link java.util.Optional}.
+     * <p>
+     * When no {@code Tile} with this title is found then {@link java.util.Optional#empty()} 
+     * will be returned.
+     * 
+     * @param  title the search criteria
+     * @return the {@code Tile} wrapped in an {@code Optional} or {@code Optional#empty()}}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    java.util.Optional
+     * @see    java.util.Optional#empty()
+     */
+    public Optional<Tile> getTile(final String title) {
         final Optional<Tile> tile = tiles.stream()
                 .filter(t -> t.getTitle().equals(title))
                 .findFirst();
         
         return tile;
-        
-//        return Optional.ofNullable(tile);
     }
     
+    /**
+     * Search and returnes the first {@link com.github.naoghuman.lib.tile.core.TileLoader}
+     * which supports the given {@link com.github.naoghuman.lib.tile.core.Tile} wrapped in 
+     * an {@link java.util.Optional}.
+     * <p>
+     * A {@code TileLoader} supports a {@code Tile} if
+     * <ul>
+     * <li>the {@code prefix} from the {@code Tile} is supported by the {@code TileLoader} and</li>
+     * <li>the {@code scope} from both are equals</li>
+     * </ul>
+     * <p>
+     * When no {@code TileLoader} is found then an {@link java.util.Optional#empty()} will 
+     * be returned.
+     * 
+     * @param  tile the search criteria
+     * @return the {@code TileLoader} wrapped in an {@code Optional} or {@code Optional#empty()}}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    com.github.naoghuman.lib.tile.core.Tile#getPrefix()
+     * @see    com.github.naoghuman.lib.tile.core.Tile#getScope()
+     * @see    com.github.naoghuman.lib.tile.core.TileLoader
+     * @see    com.github.naoghuman.lib.tile.core.TileLoader#getPrefixes()
+     * @see    com.github.naoghuman.lib.tile.core.TileLoader#getScope()
+     * @see    java.util.Optional
+     * @see    java.util.Optional#empty()
+     */
     public Optional<TileLoader> getTileLoader(final Tile tile) {
-//        TileLoader tileLoader = null;
-//        for(TileLoader tl : tileLoaders) {
-//            if (tl.supports(tile.getPrefix())) {
-//                tileLoader = tl;
-//                break;
-//            }
-//        }
-	// TODO convert to lambda
         final Optional<TileLoader> tileLoader = tileLoaders.stream()
                 .filter(tl -> tl.supports(tile))
                 .findFirst();
         
         return tileLoader;
-        
-//        return Optional.ofNullable(tileLoader);
     }
-
+    
+    /**
+     * Returnes all {@link com.github.naoghuman.lib.tile.core.Tile}s from this
+     * {@code TileSet} as an {@link javafx.collections.ObservableList}.
+     * <p>
+     * The list from {@code Tile}s will be sorted by their {@code titles}.
+     * 
+     * @return all {@code Tile}s from this {@code TileSet}.
+     * @see    com.github.naoghuman.lib.tile.core.Tile
+     * @see    javafx.collections.ObservableList
+     */
     public ObservableList<Tile> getTiles() {
         if (tiles.isEmpty()) {
             return tiles;
@@ -150,6 +190,11 @@ public abstract class TileSet {
         });
 
         return tiles;
+    }
+    
+    private void validate() {
+        TileProvider.getDefault().getDefaultValidator().validate(tiles);
+        TileProvider.getDefault().getDefaultValidator().validate(tileLoaders);
     }
     
 }

@@ -20,6 +20,8 @@ layer.
 
 
 #### Enhancement
+#18 [api] Rework api from Validator.
+#17 [api] Switch 'autor' and 'autorUrl' to Optional.
 #9 [Lib-Tile] Rework the API for the library.
 #4 [Documentation] Add a template for the release-notes.
 
@@ -36,6 +38,7 @@ layer.
 
 
 #### Refactoring
+#16 [documentation] Update the JavaDoc.
 #15 [project] Update the project description.
 #13 [pom] Remove the `maven-release-plugin` in the `build` section.
 #12 [Documentation] Fix output from the README in the browser.

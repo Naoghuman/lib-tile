@@ -16,17 +16,17 @@
  */
 
 /**
- * This package contains the <code>API</code> from the library <code>Lib-Tile-Core</code>.
- * <p />
- * With this contained <code>Classes</code> and <code>Interfaces</code> the developer 
+ * This package contains the {@code API} from the library {@code Lib-Tile-Core}.
+ * <p>
+ * With this contained {@code Class}es and {@code Interface}s the developer 
  * can load a {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition 
  * a little transparent Image) as a {@link javafx.scene.layout.Background} or an 
  * {@link javafx.scene.image.Image}.
- * <p />
- * The main point for access the functionalities from this <code>API</code> is the class 
+ * <p>
+ * The main point for access the functionalities from this {@code API} is the class 
  * {@link com.github.naoghuman.lib.tile.core.TileProvider}. For example with the method 
  * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
- * the developer can load the <code>Tile</code> as an {@link javafx.scene.layout.Background}.
+ * the developer can load the {@code Tile} as an {@link javafx.scene.layout.Background}.
  * 
  * @see com.github.naoghuman.lib.tile.core.TileProvider
  * @see com.github.naoghuman.lib.tile.core.Tile
