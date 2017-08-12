@@ -231,6 +231,7 @@ The library `Lib-Tile-Customized-Examples` provides different examples about
 * The last example _(will be implemented in the future)_ shows an `own` TileSet. 
   Like `own` means this example contains only own Tiles.
 
+_Class [CustomizedExampleReducedTileSet]:_
 ```java
 /**
  * TODO
@@ -333,6 +334,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Links)
 [Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
+[CustomizedExampleReducedTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Customized-Examples/src/main/java/com/github/naoghuman/lib/tile/customized/examples/reducedtileset/CustomizedExampleReducedTileSet.java
 [Download Lib-Tile]:https://github.com/Naoghuman/lib-tile/releases
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
