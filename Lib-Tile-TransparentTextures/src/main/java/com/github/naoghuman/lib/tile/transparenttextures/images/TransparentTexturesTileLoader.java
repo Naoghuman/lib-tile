@@ -16,37 +16,34 @@
  */
 package com.github.naoghuman.lib.tile.transparenttextures.images;
 
-import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileLoader;
 import java.util.Optional;
 
 /**
- * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
+ * The class {@code TransparentTexturesTileLoader} allowed to load a
+ * {@link com.github.naoghuman.lib.tile.core.Tile} with the help from the class
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider}.
  * <p>
- * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
- * (which is per definition a little transparent Image) from the enum 
- * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
- * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} with the 
- * help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
- * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
- *
+ * A {@code TileLoader} supports a {@code Tile} if gollowing conditions are true:
+ * <ul>
+ * <li>If the {@code scope} from both ({@code Tile} and {@code TileLoader}) are equals.</li>
+ * <li>If this {@code TileLoader} supports the {@code prefix} from the {@code Tile}.</li>
+ * </ul>
+ * 
  * @author Naoghuman
+ * @since 0.2.0
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.TileProvider
- * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
- * @see javafx.scene.layout.Background
- * @see javafx.scene.image.Image
  */
 public final class TransparentTexturesTileLoader extends TileLoader {
 	
     private static final Optional<TransparentTexturesTileLoader> INSTANCE = Optional.of(new TransparentTexturesTileLoader());
 
     /**
-     * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
+     * Returns a singleton instance from the class {@code TransparentTexturesTileLoader}.
      * 
-     * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
+     * @return a singleton instance from this class.
      */
     public static final TransparentTexturesTileLoader getDefault() {
         return INSTANCE.get();
