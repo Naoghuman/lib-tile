@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Naoghuman
+ * Copyright (C) 2017 Naoghuman
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,8 +22,10 @@ import com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTextu
 import java.util.Optional;
 
 /**
+ * TODO
  * 
  * @author Naoghuman
+ * @since  0.2.0
  */
 public final class CustomizedExampleReducedTileSet extends TileSet {
     

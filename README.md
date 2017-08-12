@@ -87,7 +87,7 @@ Currently supported is [Transparent Textures] with the libraries
 [Lib-Tile-TransparentTextures](#LiTiTrTe) and [Lib-Tile-TransparentTextures-Images](#LiTiTrTeIm).
 
 In the library [Lib-Tile-Customized-Examples](#LiTiCuEx) different examples shows 
-how to used a reduced, mixed or own `TileSet`.
+how to used a `reduced`, `mixed` and / or `own` [TileSet].
 
 
 ### Lib-Tile-Core<a name="LiTiCo" />
@@ -96,117 +96,29 @@ The library `Lib-Tile-Core` provides the API to load a [Tile] (which is per defi
 a little transparent Image) as a [Background] or an [Image] with a concrete 
 implementation from a [TileLoader].
 
-The main point for access the functionalities from this <code>API</code> is the 
-class [TileProvider]. For example with the method TileProvider#loadAsBackground(TileLoader, Tile) 
-the developer can load a [Tile] as an [Background].
+The main point for access the functionalities from this `API` is the class [TileProvider]. 
+For example with the method TileProvider#loadAsBackground(TileLoader, Tile) the developer 
+can load a [Tile] as an [Background].
 
-Class [TileProvider]
+_Class [TileProvider]:_
 ```java
 /**
- * The singleton <code>TileProvider</code> allowed the developer to load a
- * {@link com.github.naoghuman.lib.tile.core.Tile} (which is per definition a
- * little transparent Image) as a {@link javafx.scene.layout.Background} or an
- * {@link javafx.scene.image.Image} with a concrete implementation from an
- * {@link com.github.naoghuman.lib.tile.core.TileLoader}.
+ * The singleton {@code TileProvider} allowed the developer access to all relevant 
+ * methods in context from the {@code API} from the library {@code Lib-Tile-Core}.
+ * <p>
+ * For example with the methods {@code getDefaultTile(XY)} a concrete instance from 
+ * the {@code Inteface} {@link com.github.naoghuman.lib.tile.core.Tile} can be created.
+ * <br>
+ * With the method {@code getDefaultValidator()} the developer have access to a 
+ * default implementation from the {@code Inteface} 
+ * {@link com.github.naoghuman.lib.tile.core.TileValidator}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.TileLoader
- * @see com.github.naoghuman.lib.tile.core.Tile
- * @see javafx.scene.layout.Background
- * @see javafx.scene.image.Image
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.Tile
+ * @see    com.github.naoghuman.lib.tile.core.TileValidator
  */
 public final class TileProvider
-```
-
-
-```java
-private static final Optional<TileProvider> instance = Optional.of(new TileProvider());
-
-/**
- * Returns a singleton instance from the class <code>TileProvider</code>.
- *
- * @return a singleton instance from this class.
- */
-public static final TileProvider getDefault()
-
-```
-
-
-```java
-/**
- * This method returns a concrete implementation from the
- * <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileValidator} 
- * which can be used to validate a) is a {@link java.lang.Double} greater then
- * 0.0d or b) if a {@link java.lang.String} isn't NULL or EMPTY.
- *
- * @return a concrete implementation from the <code>Interface</code>
- * {@link com.github.naoghuman.lib.tile.core.validator.TileValidator}.
- * @see com.github.naoghuman.lib.tile.core.TileValidator
- * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
- */
-public TileValidator getDefaultTileValidator()
-```
-
-
-```java
-/**
- * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
- * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an
- * {@link javafx.scene.image.Image} which will be converted to a
- * {@link javafx.scene.layout.Background}.
- * <p />
- * Internal the parameter from the <code>Tile</code> will be checked with 
- * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
- * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
- * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
- * <p />
- * Following parameters in the <code>Tile</code> will be checked by default:
- * <ul>
- * <li>imageName, title, width, height</li>
- * </ul>
- * 
- * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
- * as an {@link javafx.scene.image.Image} which will then be converted to a
- * {@link javafx.scene.layout.Background}.
- * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
- * should be loaded as a {@link javafx.scene.layout.Background}.
- * @return the loaded {@link javafx.scene.layout.Background}.
- * @see com.github.naoghuman.lib.tile.core.TileLoader
- * @see com.github.naoghuman.lib.tile.core.Tile
- * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
- * @see javafx.scene.layout.Background
- * @see javafx.scene.image.Image
- */
-public Background loadAsBackground(final TileLoader loader, final Tile tile)
-```
-
-
-```java
-/**
- * Loads the given {@link com.github.naoghuman.lib.tile.core.Tile} with the
- * {@link com.github.naoghuman.lib.tile.core.TileLoader} as an {@link javafx.scene.image.Image}.
- * <p />
- * Internal the parameter from the <code>Tile</code> will be checked with 
- * the {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator} 
- * against following rules a) is a {@link java.lang.Double} greater then 0.0d 
- * or b) if a {@link java.lang.String} isn't NULL or EMPTY.
- * <p />
- * Following parameters in the <code>Tile</code> will be checked by default:
- * <ul>
- * <li>imageName, title, width, height</li>
- * </ul>
- *
- * @param loader loads the given {@link com.github.naoghuman.lib.tile.core.Tile} 
- * as an {@link javafx.scene.image.Image}.
- * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which
- * should be loaded as an {@link javafx.scene.image.Image}.
- * @return the loaded {@link javafx.scene.image.Image}.
- * @see com.github.naoghuman.lib.tile.core.TileLoader
- * @see com.github.naoghuman.lib.tile.core.Tile
- * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
- * @see javafx.scene.image.Image
- */
-public Image loadAsImage(final TileLoader loader, final Tile tile)
 ```
 
 For more informations and examples plz see the [ReadMe from Lib-Tile-Core].
@@ -225,33 +137,48 @@ library `Lib-Tile-TransparentTextures`. So you don't need to include the library
 `Lib-Tile-TransparentTextures-Images` into your project which size is momenatry 
 `13MB`.
 
-Enum [TransparentTexturesTile]
+_Class [TransparentTexturesTile]:_
 ```java
 /**
- * The <code>enum</code> TransparentTexturesTile is a collection from 
- * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
- * <code>Tileset</code> from the internet page https://www.transparenttextures.com/.
- * <p />
- * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
- * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader} 
- * from the associated library <code>Lib-Tile-TransparentTextures-Images</code>.
- *
+/**
+ * The <code>enum</code> TransparentTexturesTileSet is a collection from 
+ {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
+ * <code>Tileset</code> from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
+ * <p>
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded over the class 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider} with the help from the concrete class 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}.<br>
+ * See there the methods 
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }
+ * and {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }.
+ * <p>
+ * Additional informations:<br>
+ * The parameters from the initialisation in this <code>Tileset</code> will be validate with the class 
+ * {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}. <code>DefaultTileValidator</code> 
+ * allowed basic checks, for example if a {@link java.lang.String} is <code>NULL</code> or <code>EMPTY</code>.
+ * 
  * @author Naoghuman
  * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ * @see com.github.naoghuman.lib.tile.core.TileValidator
+ * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
-public enum TransparentTexturesTile implements Tile {
+public final class TransparentTexturesTileSet extends TileSet {
+    
+    private static final String SCOPE = TransparentTexturesTileLoader.getDefault().getScope();
 
     /**
      * The <code>Java</code> representation from the tile: 3Px Tile
      */
-    TT_3PX_TILE("tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"), // NOI18N
+    public static final Tile TT_3PX_TILE = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"); // NOI18N
     
     /**
      * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
      */
-    TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"), // NOI18N
-
+    public static final Tile TT_45_DEGREE_FABRIC_DARK = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"); // NOI18N
+    
     ...
 }
 ```
@@ -262,16 +189,15 @@ For more informations and examples plz see the [ReadMe from Lib-Tile-Transparent
 ### Lib-Tile-TransparentTextures-Images<a name="LiTiTrTeIm" />
 
 The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
-tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader] 
-which allowed the developer to load a [Tile] image from the `Enum` 
-[TransparentTexturesTile].
+tileset `Transparent Textures` which can be loaded with the help from the class
+[TransparentTexturesTileLoader] (which is contained in the library `Lib-Tile-TransparentTextures`).
 
-Class [TransparentTexturesTileLoader]
+_Class [TransparentTexturesTileLoader]:_
 ```java
 /**
  * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
  * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
- * <p />
+ * <p>
  * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
  * (which is per definition a little transparent Image) from the enum 
  * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
@@ -287,19 +213,7 @@ Class [TransparentTexturesTileLoader]
  * @see javafx.scene.layout.Background
  * @see javafx.scene.image.Image
  */
-public final class TransparentTexturesTileLoader implements TileLoader
-```
-
-
-```java
-private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
-
-/**
- * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
- * 
- * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
- */
-public static final TransparentTexturesTileLoader getDefault()
+public final class TransparentTexturesTileLoader extends TileLoader
 ```
 
 For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures-Images].
@@ -314,8 +228,18 @@ The library `Lib-Tile-Customized-Examples` provides different examples about
   example `TransparentTextures`.
 * The next example _(will be implemented in the future)_ shows an `mixed` TileSet. 
   A mixed TileSet contains predefined and own Tiles.
-* The last example shows an `own` TileSet. Like `own` means this example contains 
-  only own Tiles.
+* The last example _(will be implemented in the future)_ shows an `own` TileSet. 
+  Like `own` means this example contains only own Tiles.
+
+```java
+/**
+ * TODO
+ * 
+ * @author Naoghuman
+ * @since  0.2.0
+ */
+public final class CustomizedExampleReducedTileSet extends TileSet
+```
 
 For more informations and examples plz see the [ReadMe from Lib-Tile-Customized-Examples].
 
@@ -437,4 +361,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [TileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileSet.java
 [Transparent Textures]:https://www.transparenttextures.com/
 [TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
-[TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
+[TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
