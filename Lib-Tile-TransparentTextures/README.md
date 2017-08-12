@@ -28,7 +28,8 @@ Content
 
 * [Examples](#Examples)
 * [Api](#Api)
-    * [com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile](#TrTeTi)
+    * [com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTileSet](#TrTeTiSe)
+    * [com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader](#TrTeTiLo)
     * [Cheat-Sheet TransparentTextures](#ChShTrTe)
 * [License](#License)
 * [Autor](#Autor)
@@ -39,58 +40,90 @@ Content
 Examples<a name="Examples" />
 ---
 
-TODO Add in later version examples how to use this `api`.
+Examples how to use the `predefined`, `reduced`, `mixed` and / or `own` [TileSet]s 
+can be found in the `demo` application [Lib-Tile-Demo].
+
+_Image:_ Demo application  
+![demo_v0.3.0.png][demo_v0.3.0]
 
 
 
 Api<a name="Api" />
 ---
 
-### com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile<a name="TrTeTi" />
+### com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTileSet<a name="TrTeTiSe" />
 
 ```Java
 /**
- * The <code>enum</code> TransparentTexturesTile is a collection from 
+ * The class {@code TransparentTexturesTileSet} is a collection from 
  * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
- * <code>Tileset</code> from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
- * <p />
- * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded over the class 
- * {@link com.github.naoghuman.lib.tile.core.TileProvider} with the help from the concrete class 
- * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader}.
- * <br />
- * See there the methods 
- * {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }
- * and {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile) }.
+ * {@code Tileset} from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
  * <p>
- * Additional informations:
- * <br />
- * The parameters from the initialisation in this <code>Tileset</code> will be validate with the class 
- * {@link com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator}. <code>DefaultTileValidator</code> 
- * allowed basic checks, for example if a {@link java.lang.String} is <code>NULL</code> or <code>EMPTY</code>.
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
+ * with the class {@link com.github.naoghuman.lib.tile.core.TileProvider}.
+ * <br>
+ * See there the methods
+ * <ul>
+ * <li>{@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile)}</li>
+ * <li>{@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile)}</li>
+ * </ul>
  * 
  * @author Naoghuman
+ * @since 0.2.0
  * @see com.github.naoghuman.lib.tile.core.Tile
  * @see com.github.naoghuman.lib.tile.core.TileLoader
  * @see com.github.naoghuman.lib.tile.core.TileProvider
- * @see com.github.naoghuman.lib.tile.core.TileValidator
- * @see com.github.naoghuman.lib.tile.core.internal.DefaultTileValidator
- * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
-public enum TransparentTexturesTile implements Tile
+public final class TransparentTexturesTileSet extends TileSet
+```
+
+```Java
+private static final String SCOPE = TransparentTexturesTileLoader.getDefault().getScope();
+
+/**
+ * The {@code Java} representation from the tile: 3Px Tile
+ */
+public static final Tile TT_3PX_TILE = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"); // NOI18N
+    
+/**
+ * The {@code Java} representation from the tile: 45 Degree Fabric (Dark)
+ */
+public static final Tile TT_45_DEGREE_FABRIC_DARK = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"); // NOI18N
+    
+...
+```
+
+
+### com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader<a name="TrTeTiLo" />
+
+```Java
+/**
+ * The class {@code TransparentTexturesTileLoader} allowed to load a
+ * {@link com.github.naoghuman.lib.tile.core.Tile} with the help from the class
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider}.
+ * <p>
+ * A {@code TileLoader} supports a {@code Tile} if gollowing conditions are true:
+ * <ul>
+ * <li>If the {@code scope} from both ({@code Tile} and {@code TileLoader}) are equals.</li>
+ * <li>If this {@code TileLoader} supports the {@code prefix} from the {@code Tile}.</li>
+ * </ul>
+ * 
+ * @author Naoghuman
+ * @since 0.2.0
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ */
+public final class TransparentTexturesTileLoader extends TileLoader
 ```
 
 ```Java
 /**
- * The <code>Java</code> representation from the tile: 3Px Tile
+ * Returns a singleton instance from the class {@code TransparentTexturesTileLoader}.
+ * 
+ * @return a singleton instance from this class.
  */
-TT_3PX_TILE("tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"), // NOI18N
-    
-/**
- * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
- */
-TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"), // NOI18N
-
-...
+public static final TransparentTexturesTileLoader getDefault()
 ```
 
 
@@ -124,6 +157,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
+[demo_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042851-02bf3cd4-7bb9-11e7-818d-28c7260c0c25.png
 
 
 
