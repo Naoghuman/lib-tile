@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.naoghuman</groupId>
     <artifactId>lib-tile</artifactId>
-    <version>0.2.0-SNAPSHOT</version> <!-- -SNAPSHOT -->
+    <version>0.2.0</version> <!-- -SNAPSHOT -->
     
     <packaging>pom</packaging>
     <name>Lib-Tile</name>
@@ -71,7 +71,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                         <nonFilteredFileExtension>png</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
-                <!-- for RELEASE 
+                <!-- for RELEASE -->
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -80,7 +80,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                         </goals>
                     </execution>
                 </executions>
-                -->
+                <!-- -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -89,7 +89,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                 <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
-                <!-- for RELEASE 
+                <!-- for RELEASE -->
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -98,13 +98,13 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                         </goals>
                     </execution>
                 </executions>
-               -->
+               <!-- -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.6</version>
-                <!-- for RELEASE 
+                <!-- for RELEASE -->
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -114,7 +114,7 @@ A `Tile` is per definition a little transparent [Image] which overlay a backgrou
                         </goals>
                     </execution>
                 </executions>
-                -->
+                <!-- -->
             </plugin>
         </plugins>
         

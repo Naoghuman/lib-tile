@@ -13,7 +13,7 @@ application.
 A [Tile] is per definition a little transparent [Image] which overlay a 
 background-color or -image with the help of repetitions from the image in a layer.
 
-The current `version` is `0.1.0` from 08.14.2016 (MM.dd.yyyy).
+The current `version` is `0.2.0` from 08.13.2017 (MM.dd.yyyy).
 
 _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 ![different-tile-images_v0.3.0.png][different-tile-images_v0.3.0]
@@ -249,22 +249,26 @@ For more informations and examples plz see the [ReadMe from Lib-Tile-Customized-
 Download<a name="Download" />
 ---
 
+Current `version` is `0.2.0`. Main points in this release are:
+* This is a mayor update.
+* Rework the `api` from the library.
+* Add new `TileValidator`.
+* Add new sub-library `Lib-Tile-Customized-Examples`.
+* Update the documentation and JavaDoc to reflect the changes.
+
 There are different `zip` files as download available. Plz choose the right one 
 in dependency from your necessities:
-* Download Lib-Tile-Core-0.1.0.zip
-    * Contains only the library lib-tile-core-0.1.0.jar.
+* Download Lib-Tile-Core-0.2.0.zip
+    * Contains only the library lib-tile-core-0.2.0.jar.
     * You need to define your own [TileLoader] and your own [Tile]s images in 
       your application.
-* Download Lib-Tile-Core-And-TransparentTextures-0.1.0.zip
-    * Contains the libraries lib-tile-core-0.1.0.jar, lib-tile-transparenttextures-0.1.0.jar, 
-      lib-tile-transparenttextures-images-0.1.0.jar.
+* Download Lib-Tile-Core-And-TransparentTextures-0.2.0.zip
+    * Contains the libraries lib-tile-core-0.2.0.jar, lib-tile-transparenttextures-0.2.0.jar, 
+      lib-tile-transparenttextures-images-0.2.0.jar.
     * You can use the predefined tileset `Transparent Textures` in your application.
-* Download Lib-Tile-Demo-0.1.0-SNAPSHOT.zip
-    * Contains the library lib-tile-demo-0.1.0-SNAPSHOT.jar as an executable jar 
-      with included libraries lib-tile-core-0.1.0.jar, lib-tile-transparenttextures-0.1.0.jar, 
-      lib-tile-transparenttextures-images-0.1.0.jar.
-    * Use the demo application as a preview how the chosen [Tile]s will be looks 
-      over your chosen background image/-color.
+* Download Lib-Tile-All-0.2.0.zip
+    * Contains the libraries lib-tile-core-0.2.0.jar, lib-tile-transparenttextures-0.2.0.jar, 
+      lib-tile-transparenttextures-images-0.2.0.jar and lib-tile-customized-examples-0.2.0.jar.
 
 Access to the downloads are here: [Download Lib-Tile]
 
@@ -288,12 +292,8 @@ include the jar file&#040;s&#041; into your project. That was it :smile: .
 Documentation<a name="Documentation" />
 ---
 
-In general `Lib-Tile` and `Lib-Tile-Demo` haven't an official documentation. But 
-you can
-* read the `README.md` from every project and
-* read the [JavaDoc] in the project and sub-libraries.
-
-where `examples` and the `api` are shown and explained.
+The projects `Lib-Tile` and `Lib-Tile-Demo` contains in form from the `README.md` 
+and the [JavaDoc] the documentation.
 
 
 

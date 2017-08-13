@@ -11,7 +11,11 @@ layer.
 
 
 #### Summary
-* ...
+* This is a mayor update.
+* Rework the `api` from the library.
+* Add new `TileValidator`.
+* Add new sub-library `Lib-Tile-Customized-Examples`.
+* Update the documentation and JavaDoc to reflect the changes.
 
 
 
