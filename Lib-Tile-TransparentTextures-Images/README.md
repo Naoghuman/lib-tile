@@ -6,13 +6,16 @@ Lib-Tile-TransparentTextures-Images
 Intention
 ---
 
-The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
-tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader] 
-which allowed the developer to load a [Tile] image from the enum 
-[TransparentTexturesTile].
-
-The images can be accessed over the `Enum` [TransparentTexturesTile] from the 
-library [Lib-Tile-TransparentTextures].
+The library `Lib-Tile-TransparentTextures-Images` contains all 396 images from 
+the tileset `Transparent Textures`.
+* All images from this library are wrapped in [Tile]s in the class [TransparentTexturesTileSet] 
+  which is is located in the library [Lib-Tile-TransparentTextures].
+* The images can be loaded over the class [TileProvider] from the library [Lib-Tile-Core] 
+  as an [Background] or [Image].
+* With the separation from the implementation ([Tile]s) in the library [Lib-Tile-TransparentTextures] 
+  and the images in [Lib-Tile-TransparentTextures-Images] the developer can create 
+  `reduced` and / or `mixed` [TileSet]s. See the examples in the library [Lib-Tile-Customized-Examples]
+  for more information.
 
 > __Hint__  
 > This libray is a part from the project [Lib-Tile]. Plz see for additional 
@@ -24,8 +27,7 @@ Content
 ---
 
 * [Examples](#Examples)
-* [API](#API)
-    * [com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader](#TrTeTiLo)
+* [Cheat-Sheet TransparentTextures](#ChShTrTe)
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
@@ -35,49 +37,22 @@ Content
 Examples<a name="Examples" />
 ---
 
-TODO Add in later version examples how to use this `API`.
+Examples how to load the `images` and how to use the `predefined`, `reduced`, 
+`mixed` and / or `own` [TileSet]s can be found in the `demo` application [Lib-Tile-Demo].
+
+_Image:_ Demo application  
+![demo_v0.3.0.png][demo_v0.3.0]
 
 
 
 API<a name="API" />
 ---
 
-### com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader<a name="TrTeTi" />
+### Cheat-Sheet TransparentTextures<a name="ChShTrTe" />
 
-```Java
-/**
- * The singleton <code>TransparentTexturesTileLoader</code> is a concrete implementation 
- * from the <code>Interface</code> {@link com.github.naoghuman.lib.tile.core.TileLoader}.
- * <p />
- * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
- * (which is per definition a little transparent Image) from the enum 
- * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile} as a 
- * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image} with the 
- * help from {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(TileLoader, Tile)} 
- * or {@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(TileLoader, Tile)}.
- *
- * @author Naoghuman
- * @see com.github.naoghuman.lib.tile.core.Tile
- * @see com.github.naoghuman.lib.tile.core.TileLoader
- * @see com.github.naoghuman.lib.tile.core.TileProvider
- * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
- * @see javafx.scene.layout.Background
- * @see javafx.scene.image.Image
- */
-public final class TransparentTexturesTileLoader implements TileLoader
-```
+In the [Cheat-Sheet from TransparentTextures] all `396` [Tile]s from the webpage 
+https://www.transparenttextures.com/ are listed in the class [TransparentTexturesTileSet].
 
-
-```Java
-private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
-
-/**
- * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
- * 
- * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
- */
-public static final TransparentTexturesTileLoader getDefault()
-```
 
 
 
@@ -104,16 +79,25 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
+[demo_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042851-02bf3cd4-7bb9-11e7-818d-28c7260c0c25.png
 
 
 
 [//]: # (Links)
+[Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
+[Cheat-Sheet from TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/Cheat-Sheet-TransparentTextures.md
 [Download]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Download
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
+[Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [Installation]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Installation
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
-[Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile-transparenttextures
+[Lib-Tile-Core]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-Core
+[Lib-Tile-Customized-Examples]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-Customized-Examples
+[Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
+[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures-Images
 [Requirements]:https://github.com/Naoghuman/lib-tile/blob/master/README.md#Requirements
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
-[TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
+[TileProvider]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileProvider.java
+[TileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileSet.java
+[TransparentTexturesTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTileSet.java
 [TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java

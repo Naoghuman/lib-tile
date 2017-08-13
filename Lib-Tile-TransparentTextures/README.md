@@ -130,7 +130,7 @@ public static final TransparentTexturesTileLoader getDefault()
 ### Cheat-Sheet TransparentTextures<a name="ChShTrTe" />
 
 In the [Cheat-Sheet from TransparentTextures] all `396` [Tile]s from the webpage 
-https://www.transparenttextures.com/ are listed in the enum `TransparentTexturesTile`.
+https://www.transparenttextures.com/ are listed in the class `TransparentTexturesTileSet`.
 
 
 
